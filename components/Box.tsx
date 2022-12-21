@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 interface BoxProps {
-    children: React.ReactNode; // 👈️ type children
+    children: React.ReactNode;
 };
 
 const Box: FunctionComponent<BoxProps> = (props) => {
