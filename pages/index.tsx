@@ -1,8 +1,29 @@
 import Nav from "../components/Nav";
 import BoxGroup from "../components/BoxGroup";
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
+import Image from 'next/image';
+import { AiOutlineGithub, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillFacebook } from 'react-icons/ai'
 
 const Index = () => {
+
+	const soc = [
+		<a href="https://github.com/AlexisKenAlvarez" target="_blank">
+			<AiOutlineGithub />
+		</a>,
+		<a href="https://www.instagram.com/alexiskenalvarez/" target="_blank">
+			<AiFillInstagram />
+		</a>,
+		<a href="https://www.linkedin.com/in/alexiskenalvarez/" target="_blank">
+			<AiFillLinkedin />
+		</a>,
+		<a href="mailto:alexisken1432@gmail.com" target="_blank">
+			<AiFillMail />
+		</a>,
+		<a href="https://www.facebook.com/alvarez.aki/" target="_blank">
+			<AiFillFacebook />
+		</a>,
+		
+	]
 
 	return (
 		<>
@@ -30,10 +51,22 @@ const Index = () => {
 					</div>
 
 					<div className="justify-center items-center w-[40%] hidden lg:flex">
-						<BoxGroup/>
+						<BoxGroup />
 
 					</div>
 
+				</div>
+				<div className="fixed bottom-0 lg:bottom-2 lg:left-2 lg:w-10 w-full lg:h-72 h-10">
+					<ul className="flex lg:flex-col w-full justify-center items-center relative h-full pb-2">
+						{soc.map((items, index) => {
+							return (
+								<li className="mx-3 mb-4 lg:mb-4 text-2xl text-grey cursor-pointer hover:text-black transition-all ease-in-out" key={index}>
+									{items}
+								</li>
+							)
+						})}
+						<div className="h-full w-[2px] bg-grey lg:block hidden"></div>
+					</ul>
 				</div>
 			</div>
 		</>
