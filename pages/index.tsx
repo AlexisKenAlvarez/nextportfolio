@@ -6,8 +6,6 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
 const Index = () => {
 
-
-
 	return (
 		<>
 			<div className="h-screen w-full bg-topog relative overflow-x-hidden">
