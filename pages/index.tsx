@@ -13,7 +13,7 @@ const Index = () => {
 			<div className="h-screen w-full bg-topog relative overflow-x-hidden">
 				<Nav />
 				<div className="flex h-[80%] w-full max-w-[1600px] mx-auto min-h-[550px] justify-center">
-					<div className="w-full lg:w-[35%] h-[85%] font-raleway px-7 mt-5 text-center lg:text-left flex lg:items-center">
+					<div className="w-full xl:w-[35%] lg:w-[50%]  h-[85%] font-raleway px-7 mt-5 text-center lg:text-left flex lg:items-center">
 						<div className="h-fit w-full lg:w-fit">
 							<p className="text-mygreen font-medium text-md">Hey 👋, my name is</p>
 							<h1 className="font-black text-3xl md:text-5xl mt-3">Alexis Ken Alvarez</h1>
