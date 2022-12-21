@@ -33,9 +33,9 @@ const Nav = () => {
 				</ul>
 			</div>
 
-			<div className='absolute bg-lightg w-full h-screen top-0 left-0 translate-x-[100%] transition-all ease-in-out duration-[0.4s]' style={navActive ? { transform: "translateX(0%)" } : {}}></div>
+			<div className='absolute bg-lightg w-full h-screen top-0 left-0 translate-x-[100%] transition-all ease-in-out duration-[0.4s] z-9' style={navActive ? { transform: "translateX(0%)" } : {}}></div>
 
-			<div className='bg-db w-full h-screen translate-x-[100%] absolute top-0 right-0 transition-all ease-in-out delay-[0.2s] duration-[0.4s]' style={navActive ? { transform: "translateX(0%)" } : {}}>
+			<div className='bg-db w-full h-screen translate-x-[100%] absolute top-0 right-0 transition-all ease-in-out delay-[0.2s] duration-[0.4s] z-10' style={navActive ? { transform: "translateX(0%)" } : {}}>
 				<div className='w-full flex justify-between p-8 pl-12'>
 					<Image src="/whitelogo.webp" alt="Logo" width="50" height="50" />
 					<RiCloseFill color="white" className='text-white text-3xl' onClick={() => { setNav(false) }} />
