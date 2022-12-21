@@ -22,18 +22,22 @@ const BoxGroup = () => {
             <div className="flex flex-col gap-y-7">
                 {Box2.map((items, index) => {
                     return (
-                        <Box key={index}>
-                            {items}
-                        </Box>
+                        <div key={index}>
+                            <Box>
+                                {items}
+                            </Box>
+                        </div>
                     )
                 })}
             </div>
             <div className="flex flex-col gap-y-7">
                 {Box3.map((items, index) => {
                     return (
-                        <Box key={index}>
-                            {items}
-                        </Box>
+                        <div key={index}>
+                            <Box>
+                                {items}
+                            </Box>
+                        </div>
                     )
                 })}
             </div>
