@@ -111,13 +111,13 @@ const Index = () => {
 							<h2 className="text-2xl font-raleway font-semibold hidden lg:block">Years of experience</h2>
 						</div>
 						<div className="sm:flex sm:gap-3">
-							<div className="border-[1px] border-black shadow-forBox h-fit flex flex-col gap-y-10 p-5 py-10 mt-5 w-full max-w-[360px] sm:max-w-[1600px] xl:flex-row lg:pl-14 xl:gap-x-16">
+							<div className="border-[1px] border-black shadow-forBox h-fit flex flex-col gap-y-10 p-5 py-10 mt-5 w-full max-w-[360px] sm:max-w-[1600px] xl:flex-row lg:pl-14 xl:gap-x-16 2xl:gap-x-32">
 
 								<div className="font-raleway font-medium">
 									{info1.map(details => {
 										return (
 											<div key={details.id} className="flex mb-3 xl:mb-[35px]">
-												<p className="w-[5.8rem]">{details.label}: </p>
+												<p className="w-[5.8rem] opacity-70">{details.label}: </p>
 												<p className="ml-3 text-mygreen">{details.value}</p>
 											</div>
 										)
@@ -130,7 +130,7 @@ const Index = () => {
 									{info2.map(details => {
 										return (
 											<div key={details.id} className="flex mb-3 xl:mb-[35px]">
-												<p className="w-[7rem]">{details.label}: </p>
+												<p className="w-[7rem] opacity-70">{details.label}: </p>
 												<p className="ml-3 text-mygreen w-[12rem]">{details.value}</p>
 											</div>
 										)
