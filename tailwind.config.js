@@ -26,9 +26,13 @@ module.exports = {
         'topog': "url('https://ik.imagekit.io/efpqj5mis/topog_fMXuZRb_k.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671535737002')",
         'darktopog': "url('https://ik.imagekit.io/efpqj5mis/darktopg_DM8xxQIl3.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671536881647')"
       },
+
+      clipPath: {
+        'divider': "polygon(50% 6%, 100% 0%, 100% 100%, 0 100%, 0 0)",
+      },
     },
   },
   plugins: [
-    // require('tailwind-clip-path'),
+    require('tailwind-clip-path'),
   ],
 }
