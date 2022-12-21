@@ -1,49 +1,43 @@
 import Nav from "../components/Nav";
 import Image from 'next/image';
 import Box from "../components/Box";
+import BoxGroup from "../components/BoxGroup";
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
 const Index = () => {
 
-	const Box2 = [
-		<Image alt="node" src="/techs/node.webp" width="79" height="79" />,
-		<Image alt="react" src="/techs/react.webp" width="79" height="79" />
-	]
 
-	const Box3 = [
-		<Image alt="ts" src="/techs/ts.webp" width="75" height="75" />,
-		<Image alt="js" src="/techs/js.webp" width="75" height="75" />,
-		<Image alt="tailwind" src="/techs/tailwind.webp" width="79" height="79" />
-	]
 
 	return (
 		<>
 			<div className="h-screen w-full bg-topog relative overflow-x-hidden">
 				<Nav />
+				<div className="flex h-[80%] w-full max-w-[1600px] mx-auto min-h-[550px] justify-center">
+					<div className="w-full lg:w-[35%] h-[85%] font-raleway px-7 mt-5 text-center lg:text-left flex lg:items-center">
+						<div className="h-fit w-full lg:w-fit">
+							<p className="text-mygreen font-medium text-md">Hey 👋, my name is</p>
+							<h1 className="font-black text-3xl md:text-5xl mt-3">Alexis Ken Alvarez</h1>
+							<h2 className="font-black text-2xl md:text-4xl mt-1 opacity-70">Full stack developer</h2>
+							<h3 className="font-medium text-grey max-w-[400px] text-[16px] mx-auto lg:mx-0 mt-4">I’m a junior web developer from Philippines. I have a passion on building websites and designing UI/UX. I’m currently focusing on NextJS and also website responsiveness. I explore new lessons everyday to improve my skills.</h3>
+							<div className="flex items-center mt-14 mx-auto lg:mx-0 w-fit select-none">
+								<div className="w-fit px-6 bg-black opacity-70 text-white font-courier py-3 rounded font-medium cursor-pointer">
+									&#60;/&#62; Projects
+								</div>
+								<div className="flex justify-center items-center font-courier text-grey font-medium ml-5 cursor-pointer">
+									<p className="font-bold">Hire me</p>
+									<HiOutlineArrowNarrowRight className="ml-2 text-2xl" />
+								</div>
 
-				<div className="h-[80%] w-full flex justify-center items-center">
-					<div className="w-fit h-fit flex justify-center items-center gap-x-7">
-						<Box>
-							<Image alt="nextjs" src="/techs/next.webp" width="79" height="79" />
-						</Box>
-						<div className="flex flex-col gap-y-7">
-							{Box2.map(items => {
-								return (
-									<Box>
-										{items}
-									</Box>
-								)
-							})}
+							</div>
 						</div>
-						<div className="flex flex-col gap-y-7">
-							{Box3.map(items => {
-								return (
-									<Box>
-										{items}
-									</Box>
-								)
-							})}
-						</div>
+
 					</div>
+
+					<div className="justify-center items-center w-[40%] hidden lg:flex">
+						<BoxGroup className="hidden lg:flex" />
+
+					</div>
+
 				</div>
 			</div>
 		</>
