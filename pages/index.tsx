@@ -34,7 +34,7 @@ const Index = () => {
 					</div>
 
 					<div className="justify-center items-center w-[40%] hidden lg:flex">
-						<BoxGroup className="hidden lg:flex" />
+						<BoxGroup/>
 
 					</div>
 

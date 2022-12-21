@@ -1,13 +1,7 @@
 import Image from 'next/image';
 import Box from './Box';
-import { FunctionComponent } from 'react'
 
-interface BoxProp {
-    className: string
-}
-
-const BoxGroup: FunctionComponent<BoxProp>  = (props) => {
-    const { className } = props
+const BoxGroup  = () => {
     const Box2 = [
         {
             id: '1',
@@ -34,7 +28,7 @@ const BoxGroup: FunctionComponent<BoxProp>  = (props) => {
         },
 	]
     return (
-        <div className={`w-fit h-fit flex justify-center items-center gap-x-7 ${className}`}>
+        <div className={`w-fit h-fit flex justify-center items-center gap-x-7`}>
             <Box>
                 <Image alt="nextjs" src="/techs/next.webp" width="79" height="79" />
             </Box>
