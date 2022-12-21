@@ -3,8 +3,13 @@ import BoxGroup from "../components/BoxGroup";
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 import Image from 'next/image';
 import { AiOutlineGithub, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillFacebook } from 'react-icons/ai'
+import Head from 'next/head';
 
 const Index = () => {
+
+	<Head>
+		<title>Alvarez</title>
+	</Head>
 
 	const soc = [
 		<a href="https://github.com/AlexisKenAlvarez" target="_blank" rel="noopener noreferrer" key="1">
