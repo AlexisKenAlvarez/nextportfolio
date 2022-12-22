@@ -24,7 +24,8 @@ module.exports = {
 
       backgroundImage: {
         'topog': "url('https://ik.imagekit.io/efpqj5mis/topog_fMXuZRb_k.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671535737002')",
-        'darktopog': "url('https://ik.imagekit.io/efpqj5mis/darktopg_DM8xxQIl3.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671536881647')"
+        'darktopog': "url('https://ik.imagekit.io/efpqj5mis/darktopg_DM8xxQIl3.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671536881647')",
+        'blackTopog':  "url('https://ik.imagekit.io/efpqj5mis/black_lcrYfEa-S.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671680260881')"
       },
 
       clipPath: {
