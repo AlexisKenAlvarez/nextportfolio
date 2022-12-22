@@ -59,12 +59,12 @@ const Index = () => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 			</Head>
 
-			<div className="w-full h-screen" style={ scroll ? {overflow: "auto"} : {overflow: "hidden"}}>
+			<div className="w-full h-auto" style={ scroll ? {overflow: "auto"} : {overflow: "hidden"}}>
 				<div className="h-[38rem] lg:h-[52rem] w-full bg-topog relative overflow-hidden">
 					<Nav />
 					<Hero />
 
-					<div className="fixed bottom-0 lg:bottom-2 lg:left-2 lg:w-10 w-full lg:h-72 h-12 bg-white lg:bg-transparent opacity-1">
+					<div className="fixed bottom-0 lg:bottom-2 lg:left-2 lg:w-10 w-full lg:h-72 h-12 bg-white lg:bg-transparent opacity-1 z-10">
 						<ul className="flex lg:flex-col w-full justify-center items-center relative h-full pb-0">
 							{soc.map(items => {
 								return (

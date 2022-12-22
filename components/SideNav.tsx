@@ -37,9 +37,9 @@ const SideNav: FunctionComponent<myProp> = (props) => {
 
     return (
         <>
-            <motion.div variants={subNav} initial="initial" animate="animate" exit="initial"  className='fixed bg-lightg w-full h-screen top-0 left-0 z-10' ></motion.div>
+            <motion.div variants={subNav} initial="initial" animate="animate" exit="initial"  className='fixed bg-lightg w-full h-screen top-0 left-0 z-20' ></motion.div>
 
-            <motion.div variants={mainNav} initial="initial" animate="animate" exit="initial" className='bg-db w-full h-screen translate-x-[100%] fixed top-0 right-0 z-10 overflow-hidden'>
+            <motion.div variants={mainNav} initial="initial" animate="animate" exit="initial" className='bg-db w-full h-screen translate-x-[100%] fixed top-0 right-0 z-20 overflow-hidden'>
                 <div className='w-full flex justify-between p-8 pl-12'>
                     <Image src="/whitelogo.webp" alt="Logo" width="50" height="50" />
                     <RiCloseFill color="white" className='text-white text-3xl' onClick={close} />
