@@ -66,24 +66,26 @@ const Index = () => {
 	}
 
 	const [exit, setExit] = useState(false)
+	const [scroll, setScroll] = useState(false)
+
 
 	useEffect(() => {
-		setTimeout(() => {
-			setExit(true)
-		}, 2000);
+		exitFunc(activeScroll)
 	}, [])
 
+	const exitFunc = (cb: () => void) => {
+		setTimeout(() => {
+			setExit(true)
+			cb()
+		}, 2000);
+	}
 
-	// const letters = (
-	// 	<motion.div className="flex">
-	// 		<motion.h1 variants={letterVar} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">H</motion.h1>
-	// 		<motion.h1 variants={letterVar} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">E</motion.h1>
-	// 		<motion.h1 variants={letterVar} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">L</motion.h1>
-	// 		<motion.h1 variants={letterVar} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">L</motion.h1>
+	const activeScroll = () => {
+		setTimeout(() => {
+			setScroll(true)
+		}, 1000);
+	}
 
-	// 	</motion.div>
-
-	// )
 
 	return (
 		<>
@@ -91,7 +93,7 @@ const Index = () => {
 				<title>Alvarez</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 			</Head>
-			<div className="w-full h-screen overflow-hidden">
+			<div className="w-full h-screen" style={ scroll ? {overflow: "auto"} : {overflow: "hidden"}}>
 				<div className="h-[38rem] lg:h-[52rem] w-full bg-topog relative overflow-hidden">
 					<Nav />
 					<Hero />
