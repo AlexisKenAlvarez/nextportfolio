@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -30,6 +31,7 @@ module.exports = {
 
       clipPath: {
         'divider': "polygon(50% 6%, 100% 0%, 100% 100%, 0 100%, 0 0)",
+        'underline': "polygon(0 0, 100% 0, 76% 10%, 0 10%);"
       },
     },
   },

@@ -1,0 +1,25 @@
+import { motion } from 'framer-motion'
+import Image from 'next/image';
+import Hello from './Hello';
+
+const Welcome = () => {
+    return (
+        <motion.div transition={{ height: { ease: "easeOut", delay: 0.8, duration: 2 } }} initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ height: 0, top: 0 }} className="fixed top-0 w-full bg-white z-12 h-screen bg-fixed">
+            <div className="mynav p-7 flex items-center justify-between relative">
+                <div className='flex items-center w-fit cursor-pointer'>
+                    <Image src="/icon.webp" alt="Logo" width="34" height="34" />
+                    <p className='font-quicksand font-medium ml-4 hover:text-mygreen transition-all ease-in-out'>alvarez.portfolio&#40;&#41;</p>
+                </div>
+            </div>
+
+
+            <div className="w-full h-[76%] flex justify-center items-center">
+                <div className="flex">
+                    <Hello />
+                </div>
+            </div>
+        </motion.div>
+    );
+}
+
+export default Welcome;
