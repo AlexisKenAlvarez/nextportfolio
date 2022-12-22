@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Box from './Box';
+import { FunctionComponent } from 'react'
 
-const BoxGroup = () => {
+const BoxGroup: FunctionComponent = () => {
     const Box2 = [
 
         <Image alt="node" src="/techs/node.webp" width="79" height="79" id="node" key='1' />,

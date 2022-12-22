@@ -1,7 +1,8 @@
 import BoxGroup from "./BoxGroup";
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
+import { FunctionComponent } from 'react'
 
-const Hero = () => {
+const Hero: FunctionComponent = () => {
     return (
         <div className="flex h-[80%] w-full max-w-[1600px] mx-auto min-h-[550px] justify-center">
             <div className="w-full xl:w-[35%] lg:w-[50%]  h-[85%] font-raleway px-7 mt-5 text-center lg:text-left flex lg:items-center">

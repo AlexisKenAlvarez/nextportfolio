@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
-import { RiCloseFill } from "react-icons/ri"
 import { useState } from 'react';
+import { FunctionComponent } from 'react'
+import { AnimatePresence } from 'framer-motion';
+import SideNav from './SideNav';
 
-const Nav = () => {
+
+const Nav: FunctionComponent = () => {
 	const navitems = ['home', 'projects', 'contact']
-	const sideItems = ['home', 'projects', 'contact']
 	const [navActive, setNav] = useState(false)
+
+	const handleClose = () => {
+		setNav(false)
+	}
 
 	return (
 		<div className="mynav p-7 flex items-center justify-between relative">
@@ -33,22 +39,10 @@ const Nav = () => {
 				</ul>
 			</div>
 
-			<div className='fixed bg-lightg w-full h-screen top-0 left-0 translate-x-[100%] transition-all ease-in-out duration-[0.4s] z-10' style={navActive ? { transform: "translateX(0%)" } : {}}></div>
-
-			<div className='bg-db w-full h-screen translate-x-[100%] fixed top-0 right-0 transition-all ease-in-out delay-[0.2s] duration-[0.4s] z-10 overflow-hidden' style={navActive ? { transform: "translateX(0%)" } : {}}>
-				<div className='w-full flex justify-between p-8 pl-12'>
-					<Image src="/whitelogo.webp" alt="Logo" width="50" height="50" />
-					<RiCloseFill color="white" className='text-white text-3xl' onClick={() => { setNav(false) }} />
-				</div>
-				<ul className='text-white font-quicksand ml-12 mt-9'>
-					{sideItems.map((items) => {
-						return (
-							<li className="mb-10" key={items}>{items}&#40;&#41;</li>
-						)
-					})}
-					<li>terminal_</li>
-				</ul>
-			</div>
+			<AnimatePresence>
+				{navActive ? <SideNav close={handleClose}/> : null}
+			</AnimatePresence>
+			
 
 
 		</div>
