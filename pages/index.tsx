@@ -52,6 +52,8 @@ const Index = () => {
 	}
 
 
+
+
 	return (
 		<>
 			<Head>
@@ -59,16 +61,16 @@ const Index = () => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 			</Head>
 
-			<div className="w-full h-auto" style={ scroll ? {overflow: "auto"} : {overflow: "hidden"}}>
+			<div className="w-full h-screen" style={scroll ? { overflow: "auto" } : { overflow: "hidden" }}>
 				<div className="h-[38rem] lg:h-[52rem] w-full bg-topog relative overflow-hidden">
 					<Nav />
 					<Hero />
 
 					<div className="fixed bottom-0 lg:bottom-2 lg:left-2 lg:w-10 w-full lg:h-72 h-12 bg-white lg:bg-transparent opacity-1 z-10">
 						<ul className="flex lg:flex-col w-full justify-center items-center relative h-full pb-0">
-							{soc.map(items => {
+							{soc.map((items, index) => {
 								return (
-									<li key={items.key} className="mx-3 lg:mb-4 text-2xl text-grey cursor-pointer hover:text-black transition-all ease-in-out">
+									<li key={index} className="mx-3 lg:mb-4 text-2xl text-grey cursor-pointer hover:text-black transition-all ease-in-out">
 										{items}
 									</li>
 								)
@@ -78,15 +80,14 @@ const Index = () => {
 					</div>
 					<div className="w-[80%] xl:w-[70%] h-[1px] bg-grey mx-auto hidden lg:block"></div>
 				</div>
-
 				<About />
 
-				{/* <AnimatePresence>
-					{exit ? null : <Welcome/>}
-				</AnimatePresence> */}
-
+				<AnimatePresence>
+					{exit ? null : <Welcome />}
+				</AnimatePresence>
 
 			</div>
+
 
 		</>
 	);
