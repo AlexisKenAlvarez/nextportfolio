@@ -52,15 +52,13 @@ const Index = () => {
 	}
 
 
-
-
 	return (
 		<>
 			<Head>
 				<title>Alexis Ken Alvarez</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 			</Head>
-			
+
 			<div className="w-full h-screen" style={scroll ? { overflow: "auto" } : { overflow: "hidden" }}>
 				<div className="h-[38rem] lg:h-[52rem] w-full bg-topog relative overflow-hidden">
 					<Nav />

@@ -17,7 +17,7 @@ const Nav: FunctionComponent = () => {
 	return (
 		<div className={`mynav p-7 flex items-center justify-between relative`}>
 			<div className='flex items-center w-fit cursor-pointer'>
-				<Image src="/icon.webp" alt="Logo" width="34" height="34" />
+				<Image src="/icon.webp" alt="Logo" width="34" height="34" className='w-auto h-auto'/>
 				<p className='font-quicksand font-medium ml-4 hover:text-mygreen transition-all ease-in-out'>alvarez.portfolio&#40;&#41;</p>
 			</div>
 

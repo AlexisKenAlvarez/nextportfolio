@@ -29,7 +29,7 @@ const Projects: FunctionComponent = () => {
         const vec = new Vector3()
 
         return useFrame(() => {
-            camera.position.lerp(vec.set(-hover.x + 0.5, -hover.y + 0.5, camera.position.z), 0.05)
+            camera.position.lerp(vec.set(-hover.x + 0.5, -hover.y + 0.5, camera.position.z), 0.1)
             camera.lookAt(0, 0, 0)
         })
     }
@@ -38,9 +38,8 @@ const Projects: FunctionComponent = () => {
         <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto mt-36 h-[40rem] flex flex-col relative justify-center items-center'>
             <div className='border-2 lg:w-1/2 h-[25rem] w-full'>
                 <Canvas camera={{ fov: 30, near: 0.5, far: 1000, position: [0, 0, 15] }}>
-                
                     <pointLight position={[10, 5, 10]} />
-                    <Laptop position={[0, -2.6, -2]} scale={1} />
+                    <Laptop position={[0, -2.6, -2]} scale={1}/>
                     <Rig2 />
                 </Canvas>
             </div>
@@ -50,9 +49,6 @@ const Projects: FunctionComponent = () => {
                     <Rig />
                 </Canvas>
             </div>
-
-
-
         </div>
     );
 }
