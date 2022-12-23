@@ -16,7 +16,6 @@ const Skills: FunctionComponent = () => {
     const otherItems = useRef(null)
     const otherView = useInView(otherItems, { once: true })
 
-    // const [letters, setTest] = useState(['早', '色', 'の', 'え', 'か', 'の', 'か', '色', 'か', '色', 'え', '早', 'の'])
     const [letters, setTest] = useState(['早'])
 
     const word = "Expertise"
@@ -69,9 +68,9 @@ const Skills: FunctionComponent = () => {
                 <motion.div animate={introAnimation} ref={textDiv}>
                     <h1 className="font-quicksand text-mygreen font-semibold text-lg">Skills</h1>
                     <div className='flex'>
-                        {letters.map((letter) => {
+                        {letters.map((letter, i) => {
                             return (
-                                <h2 className="text-2xl font-raleway font-semibold">{letter}</h2>
+                                <h2 key={i} className="text-2xl font-raleway font-semibold">{letter}</h2>
                             )
                         })}
                     </div>
