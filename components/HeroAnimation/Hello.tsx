@@ -2,19 +2,14 @@ import { FunctionComponent } from 'react'
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { genRandom } from '../../utils/UsefulFunctions'
 
 const Hello: FunctionComponent = () => {
     const inc = [-500, -350, 0, 350, 500]
     const incy = [350, -500, 100, -500, 350]
 
-    const jap = ['み', 'ひ', 'そ', 'さ', 'む', 'つ', 'さ', 'そ', 'ひ', 'こ', 'み', 'も', 'ね', 'る', 'め', 'け', 'れ', 'せ', 'ら', 'に', 'な', 'ん', 'か', 'か', 'い', 'て', 'た',]
     const [letters, setTest] = useState(['早', '色', 'の', 'え', 'か'])
     const word = "HELLO"
-
-    function genRandom() {
-        let randomLetter = jap[Math.floor(Math.random() * jap.length)];
-        return randomLetter
-    }
 
     useEffect(() => {
         var tempArray = ['']

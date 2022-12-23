@@ -2,13 +2,13 @@ import { FunctionComponent } from 'react'
 import { current, other } from '../utils/ObjectList';
 import { useInView, useAnimation, motion, delay } from "framer-motion"
 import { useRef, useEffect, useState } from 'react';
+import { genRandom } from '../utils/UsefulFunctions';
 
 const Skills: FunctionComponent = () => {
 
     const textDiv = useRef(null)
     const inView = useInView(textDiv, { once: true })
     const introAnimation = useAnimation()
-    const [letters, setTest] = useState(['早', '色', 'の', 'え', 'か'])
 
     const currentItems = useRef(null)
     const currentView = useInView(currentItems, { once: true })
@@ -16,6 +16,10 @@ const Skills: FunctionComponent = () => {
     const otherItems = useRef(null)
     const otherView = useInView(otherItems, { once: true })
 
+    // const [letters, setTest] = useState(['早', '色', 'の', 'え', 'か', 'の', 'か', '色', 'か', '色', 'え', '早', 'の'])
+    const [letters, setTest] = useState(['早'])
+
+    const word = "Expertise"
 
     useEffect(() => {
         if (inView) {
@@ -23,11 +27,29 @@ const Skills: FunctionComponent = () => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                    ease: [.21,1.03,.27,1],
+                    ease: [.21, 1.03, .27, 1],
                     duration: 1,
                     delay: 0.4
                 }
             })
+
+            var tempArray = ['']
+            const arr = [2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+            for (let x = 0; x < 28; x++) {
+                setTimeout(() => {
+
+                    arr.map((items, i) => {
+                        if (x >= items) {
+                            tempArray[i] = word[i]
+                        } else {
+                            tempArray[i] = genRandom()
+                        }
+                    })
+
+                    setTest([...tempArray])
+                }, 100 * (x + 1));
+            }
         }
 
         if (!inView) {
@@ -46,9 +68,16 @@ const Skills: FunctionComponent = () => {
 
                 <motion.div animate={introAnimation} ref={textDiv}>
                     <h1 className="font-quicksand text-mygreen font-semibold text-lg">Skills</h1>
-                    <h2 className="text-2xl font-raleway font-semibold">Current stack</h2>
-                    <div className='w-[7rem] h-[2px] bg-grey'>
-                        <div className='clip-path-underline w-16 h-16 bg-grey mt-1'></div>
+                    <div className='flex'>
+                        {letters.map((letter) => {
+                            return (
+                                <h2 className="text-2xl font-raleway font-semibold">{letter}</h2>
+                            )
+                        })}
+                    </div>
+
+                    <div className='w-[6.6rem] h-[2px] bg-grey'>
+                        <div className='clip-path-underline w-14 h-16 bg-grey mt-1'></div>
                     </div>
                 </motion.div>
 
@@ -57,8 +86,8 @@ const Skills: FunctionComponent = () => {
                 <div className="w-full h-auto grid grid-cols-2 grid-rows-3 items-center justify-items-center gap-y-7 max-w-[300px] sm:max-w-[500px] sm:gap-y-10 sm:grid-cols-3 sm:grid-rows-2 md:max-w-[700px] md:grid-cols-4 lg:max-w-full lg:grid-cols-5 lg:grid-rows-1 mx-auto mt-12">
                     {current.map((items, index) => {
                         return (
-                            <motion.div initial={{y: 50, opacity: 0}} animate={currentView ? {y: 0, opacity: 1} : {}} 
-                            transition={{delay: index * 0.16, duration: 0.7, ease: [.21,1.03,.27,1]}} className='h-[10rem] w-[7rem] xl:w-[9.5rem] relative' key={items.id}>
+                            <motion.div initial={{ y: 50, opacity: 0 }} animate={currentView ? { y: 0, opacity: 1 } : {}}
+                                transition={{ delay: index * 0.16, duration: 0.7, ease: [.21, 1.03, .27, 1] }} className='h-[10rem] w-[7rem] xl:w-[9.5rem] relative' key={items.id}>
                                 <div className='group peer w-full h-[60%] flex justify-center items-center cursor-pointer'>
                                     <div className='w-fit h-fit relative group-hover:mt-[-1.5rem] z-8 z-10 transition-all ease-in-out select-none'>
                                         {items.image}
@@ -87,8 +116,8 @@ const Skills: FunctionComponent = () => {
                     <div className='bg-transparent absolute w-5 h-5 top-0 mt-[25rem]' ref={otherItems}></div>
                     {other.map((items, index) => {
                         return (
-                            <motion.div initial={{y: 50, opacity: 0}} animate={otherView ? {y: 0, opacity: 1} : {}} 
-                            transition={{delay: index * 0.08, duration: 0.7, ease: [.21,1.03,.27,1]}} className='h-[10rem] w-[7rem] xl:w-[9.5rem] relative' key={items.id}>
+                            <motion.div initial={{ y: 50, opacity: 0 }} animate={otherView ? { y: 0, opacity: 1 } : {}}
+                                transition={{ delay: index * 0.08, duration: 0.7, ease: [.21, 1.03, .27, 1] }} className='h-[10rem] w-[7rem] xl:w-[9.5rem] relative' key={items.id}>
                                 <div className=' group w-full h-[60%] flex justify-center items-center select-none peer cursor-pointer'>
                                     <div className='w-fit h-fit relative group-hover:mt-[-1.5rem] z-8 z-10 transition-all ease-in-out select-none'>
                                         {items.image}
