@@ -1,11 +1,12 @@
 import { FunctionComponent } from 'react'
 import { info1, info2 } from '../utils/ObjectList';
+import Projects from './Projects';
 import Skills from './Skills';
 
 const About: FunctionComponent = () => {
 
     return (
-        <div className="h-[250rem] w-full bg-topog relative z-[1]">
+        <div className="h-auto w-full bg-topog relative z-[1] pb-[14rem]">
             <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-[80%] xl:w-[72%] lg:w-[80%] mx-auto">
                     <h1 className="font-quicksand text-mygreen font-semibold text-lg">About</h1>
@@ -62,6 +63,7 @@ const About: FunctionComponent = () => {
                 {/* SKILLS */}
                 <Skills/>
 
+                <Projects/>
 
 
             </div>
