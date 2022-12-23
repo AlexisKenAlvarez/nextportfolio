@@ -44,7 +44,7 @@ const Projects: FunctionComponent = () => {
                 </Canvas>
             </div>
 
-            <div className='w-full left-0 right-0 h-screen absolute top-0'>
+            <div className='w-full left-0 right-0 h-full absolute top-0'>
                 <Canvas>
                     <Rig />
                 </Canvas>

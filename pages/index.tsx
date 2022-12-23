@@ -48,7 +48,7 @@ const Index = () => {
 	const activeScroll = () => {
 		setTimeout(() => {
 			setScroll(true)
-		}, 1000);
+		}, 800);
 	}
 
 
