@@ -8,7 +8,7 @@ const Hello: FunctionComponent = () => {
     const inc = [-500, -350, 0, 350, 500]
     const incy = [350, -500, 100, -500, 350]
 
-    const [letters, setTest] = useState(['早', '色', 'の', 'え', 'か'])
+    const [letters, setTest] = useState([''])
     const word = "HELLO"
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const Hello: FunctionComponent = () => {
         <>
             {letters.map((items, i,) => {
                 return (
-                    <motion.h1 key={i} initial={{ y: 80, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.9, delay: i * 0.070, scale: { delay: i * 0.15, duration: 1 } }} exit={{ scale: 5, opacity: 0, x: inc[i], y: incy[i] }} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">{items}</motion.h1>
+                    <motion.h1 key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9, delay: i * 0.070, scale: { delay: i * 0.15, duration: 1 } }} exit={{ scale: 5, opacity: 0, x: inc[i], y: incy[i] }} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">{items}</motion.h1>
                 )
             })}
         </>
