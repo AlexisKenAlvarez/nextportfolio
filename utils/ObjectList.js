@@ -5,12 +5,12 @@ export const current = [
     {
         id: 1,
         name: 'NextJS', 
-        image: <Image alt="next" width="100" height="100" src="/current/next.webp"/>
+        image: <Image alt="next" width="100" height="100" src="/current/next.webp" className='drop-shadow-md'/>
     },
     {
         id: 2,
         name: 'ReactJS', 
-        image:<Image alt="react" width="70" height="70" src="/current/react.webp" />
+        image:<Image alt="react" width="70" height="70" src="/current/react.webp" className='drop-shadow-md' />
     },
     {
         id: 3,
@@ -59,12 +59,12 @@ export const other = [
     {
         id: 6,
         name: 'Firebase', 
-        image: <Image alt="firebase" width="60" height="60" src="/otherskills/firebase.webp" className='mb-[-1rem]'/>
+        image: <Image alt="firebase" width="60" height="60" src="/otherskills/firebase.webp" className='mb-[-1rem] drop-shadow-md'/>
     },
     {
         id: 7,
         name: 'Figma', 
-        image: <Image alt="figma" width="40" height="40" src="/otherskills/figma.webp"/>
+        image: <Image alt="figma" width="40" height="40" src="/otherskills/figma.webp" className='drop-shadow-md'/>
     },
     {
         id: 8,
@@ -84,12 +84,12 @@ export const other = [
     {
         id: 11,
         name: 'NodeJS', 
-        image: <Image alt="nodejs" width="80" height="80" src="/otherskills/node.webp" className='mb-[-1rem]'/>
+        image: <Image alt="nodejs" width="80" height="80" src="/otherskills/node.webp" className='mb-[-1rem] drop-shadow-md'/>
     },
     {
         id: 12,
         name: 'Java', 
-        image: <Image alt="java" width="50" height="50" src="/otherskills/java.webp"/>
+        image: <Image alt="java" width="50" height="50" src="/otherskills/java.webp" className='drop-shadow-md'/>
     },
     
 ]

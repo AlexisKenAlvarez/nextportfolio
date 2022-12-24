@@ -37,17 +37,17 @@ const Projects: FunctionComponent = () => {
     return (
         <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto mt-36 h-[40rem] flex flex-col relative justify-center items-center'>
             <div className='border-2 lg:w-1/2 h-[25rem] w-full'>
-                <Canvas camera={{ fov: 30, near: 0.5, far: 1000, position: [0, 0, 15] }}>
+                {/* <Canvas camera={{ fov: 30, near: 0.5, far: 1000, position: [0, 0, 15] }}>
                     <pointLight position={[10, 5, 10]} />
                     <Laptop position={[0, -2.6, -2]} scale={1}/>
                     <Rig2 />
-                </Canvas>
+                </Canvas> */}
             </div>
 
             <div className='w-full left-0 right-0 h-full absolute top-0'>
-                <Canvas>
+                {/* <Canvas>
                     <Rig />
-                </Canvas>
+                </Canvas> */}
             </div>
         </div>
     );
