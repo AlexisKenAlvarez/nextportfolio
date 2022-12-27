@@ -1,55 +1,92 @@
-import { FunctionComponent } from 'react'
-import { Canvas, useThree, useFrame } from '@react-three/fiber'
-import Laptop from '../components/Laptop'
-import { OrbitControls } from '@react-three/drei';
-import { Stats } from '@react-three/drei'
-import { Vector3 } from 'three'
-import { useEffect, useState } from 'react';
+import { FunctionComponent, useState, useRef, useEffect } from 'react'
+import { useInView, useAnimation, motion } from "framer-motion"
+import { genRandom } from '../utils/UsefulFunctions'
+import { projectList } from '../utils/ObjectList'
+import ProjectTemplate from './Projects/ProjectTemplate'
 
 const Projects: FunctionComponent = () => {
 
-    const [hover, setHover] = useState({
-        x: 0,
-        y: 0
-    })
+    const [letters, setTest] = useState(['早'])
+    const projTitle = useRef(null)
+    const projView = useInView(projTitle, { once: true })
+    const word = "PROJECTS"
+    const wordArr = ['P', 'R', 'O', 'J', 'E', 'C', 'T', 'S']
 
-    function Rig() {
-        const { mouse } = useThree()
+    const proj2 = useRef(null)
+    const proj3 = useRef(null)
 
-        return useFrame(() => {
+    const refArr = [null, proj2, proj3]
+    const view2 = useInView(proj2, { once: true })
+    const view3 = useInView(proj3, { once: true })
 
-            setHover(current => ({...current, x: mouse.x}))
-            setHover(current => ({...current, y: mouse.y}))
+    const self1 = useRef(null)
+    const self2 = useRef(null)
+    const self3 = useRef(null)
+    const selfView1 = useInView(self1, { once: true })
+    const selfView2 = useInView(self2, { once: true })
+    const selfView3 = useInView(self3, { once: true })
 
-        })
-    }
+    const selfRefArr = [self1, self2, self3]
+    const selfViewArr = [selfView1, selfView2, selfView3]
 
-    function Rig2() {
-        const { camera } = useThree()
-        const vec = new Vector3()
+    const viewArr = [view2, view3, false]
+    
+    useEffect(() => {
+        if (projView) {
+            var tempArray = ['']
+            const arr = [2, 4, 6, 8, 10, 12, 14, 16, 18]
 
-        return useFrame(() => {
-            camera.position.lerp(vec.set(-hover.x + 0.5, -hover.y + 0.5, camera.position.z), 0.1)
-            camera.lookAt(0, 0, 0)
-        })
-    }
+            for (let x = 0; x < 28; x++) {
+                setTimeout(() => {
+
+                    arr.map((items, i) => {
+
+                        if (x >= items) {
+                            tempArray[i] = word[i]
+                        } else {
+                            tempArray[i] = genRandom()
+                        }
+                    })
+
+                    setTest([...tempArray])
+                }, 80 * (x + 1));
+            }
+        }
+    }, [projView])
+
 
     return (
-        <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto mt-36 h-[40rem] flex flex-col relative justify-center items-center'>
-            <div className='border-2 lg:w-1/2 h-[25rem] w-full'>
-                {/* <Canvas camera={{ fov: 30, near: 0.5, far: 1000, position: [0, 0, 15] }}>
-                    <pointLight position={[10, 5, 10]} />
-                    <Laptop position={[0, -2.6, -2]} scale={1}/>
-                    <Rig2 />
-                </Canvas> */}
+
+        <div className='max-w-[1600px] mx-auto mt-36 h-[150rem] flex flex-col relative'>
+            <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto '>
+                <h1 className="font-quicksand text-mygreen font-semibold text-lg">Some projects I've made</h1>
+                <div className='flex'>
+                    {letters.map((letter, i) => {
+
+                        return (
+
+                            <h2 key={i} className="text-4xl md:text-6xl font-raleway" style={wordArr.includes(letter) ? { fontWeight: 'bold' } : { fontWeight: 'regular' }}>{letter}</h2>
+                        )
+                    })}
+                </div>
+
+                <div className='w-[15rem] h-[2px] bg-grey'>
+                    <div className='clip-path-underline w-28 h-16 bg-grey mt-1' ref={projTitle}></div>
+                </div>
             </div>
 
-            <div className='w-full left-0 right-0 h-full absolute top-0'>
-                {/* <Canvas>
-                    <Rig />
-                </Canvas> */}
+            <div>
+                {projectList.map((items, index) => {
+                    return (
+                        <ProjectTemplate key={index} num={items.num} title={items.title} desc={items.desc} img={items.img} innerRef={refArr[index]} view={viewArr[index]} selfRef={selfRefArr[index]} selfView={selfViewArr[index]}/>
+                    )
+                })}
             </div>
+
+
         </div>
+
+
     );
 }
 

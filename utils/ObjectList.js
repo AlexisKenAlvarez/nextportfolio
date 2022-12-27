@@ -144,3 +144,25 @@ export const info2 = [
         value: 'Coding, Gaming, Cycling'
     },
 ]
+
+export const projectList = [
+    {
+        className: 'mt-[10rem]',
+        num: '01',
+        title: 'Lista',
+        desc: 'Fully responsive assignment tracker with authentication. I used MERN stack for this project.',
+        img: 'Lista.webp'
+    },
+    {
+        num: '02',
+        title: 'Unix',
+        desc: 'Fully responsive e-commerce website with add to cart system similar to Shopee, made with MERN stack.',
+        img: 'Unix.webp'
+    },
+    {
+        num: '03',
+        title: 'Portfolio (Old)',
+        desc: 'My first ever portfolio, made with HTML, CSS, JS and GSAP for animations. It features my small projects and skills.',
+        img: 'OldPortfolio.webp'
+    },
+]

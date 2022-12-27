@@ -63,10 +63,12 @@ const About: FunctionComponent = () => {
                 {/* SKILLS */}
                 <Skills/>
 
-                <Projects/>
+                
 
 
             </div>
+
+            <Projects/>
         </div>
     );
 }

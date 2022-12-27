@@ -19,6 +19,7 @@ const Skills: FunctionComponent = () => {
     const [letters, setTest] = useState(['早'])
 
     const word = "Expertise"
+    const wordArr = word.split('')
 
     useEffect(() => {
         if (inView) {
@@ -47,7 +48,7 @@ const Skills: FunctionComponent = () => {
                     })
 
                     setTest([...tempArray])
-                }, 100 * (x + 1));
+                }, 80 * (x + 1));
             }
         }
 
@@ -70,7 +71,7 @@ const Skills: FunctionComponent = () => {
                     <div className='flex'>
                         {letters.map((letter, i) => {
                             return (
-                                <h2 key={i} className="text-2xl font-raleway font-semibold">{letter}</h2>
+                                <h2 key={i} className="text-2xl font-raleway" style={wordArr.includes(letter) ? {fontWeight: '500'}: {fontWeight: '100'}}>{letter}</h2>
                             )
                         })}
                     </div>

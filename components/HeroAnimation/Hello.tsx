@@ -10,6 +10,7 @@ const Hello: FunctionComponent = () => {
 
     const [letters, setTest] = useState([''])
     const word = "HELLO"
+    const wordArr = word.split('')
 
     useEffect(() => {
         var tempArray = ['']
@@ -35,7 +36,7 @@ const Hello: FunctionComponent = () => {
         <>
             {letters.map((items, i,) => {
                 return (
-                    <motion.h1 key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9, delay: i * 0.070, scale: { delay: i * 0.15, duration: 1 } }} exit={{ scale: 5, opacity: 0, x: inc[i], y: incy[i] }} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]">{items}</motion.h1>
+                    <motion.h1 key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.9, delay: i * 0.070, scale: { delay: i * 0.15, duration: 1 } }} exit={{ scale: 5, opacity: 0, x: inc[i], y: incy[i] }} className="text-[6rem] md:text-[9rem] lg:text-[14rem] xl:text-[17rem]" style={wordArr.includes(items) ? {fontWeight: '400'} : {fontWeight: '100'}}>{items}</motion.h1>
                 )
             })}
         </>
