@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { AiOutlineGithub, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillFacebook } from 'react-icons/ai'
 
 
 export const current = [
@@ -27,6 +28,24 @@ export const current = [
         name: 'Prisma', 
         image: <Image alt="prisma" width="100" height="100" src="/current/prisma.webp" className='mb-[-1rem]'/>
     } 
+]
+
+export const soc = [
+    <a href="https://github.com/AlexisKenAlvarez" target="_blank" rel="noopener noreferrer" key="1">
+        <AiOutlineGithub />
+    </a>,
+    <a href="https://www.instagram.com/alexiskenalvarez/" target="_blank" rel="noopener noreferrer" key="2">
+        <AiFillInstagram />
+    </a>,
+    <a href="https://www.linkedin.com/in/alexiskenalvarez/" target="_blank" rel="noopener noreferrer" key="3">
+        <AiFillLinkedin />
+    </a>,
+    <a href="mailto:alexisken1432@gmail.com" target="_blank" rel="noopener noreferrer" key="4">
+        <AiFillMail />
+    </a>,
+    <a href="https://www.facebook.com/alvarez.aki/" target="_blank" rel="noopener noreferrer" key="5">
+        <AiFillFacebook />
+    </a>,
 ]
 
 
@@ -147,7 +166,6 @@ export const info2 = [
 
 export const projectList = [
     {
-        className: 'mt-[10rem]',
         num: '01',
         title: 'Lista',
         desc: 'Fully responsive assignment tracker with authentication. I used MERN stack for this project.',

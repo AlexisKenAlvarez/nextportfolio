@@ -6,7 +6,7 @@ import Skills from './Skills';
 const About: FunctionComponent = () => {
 
     return (
-        <div className="h-fit w-full bg-topog relative z-[1] pb-[14rem]">
+        <div className="h-fit w-full relative z-[1] pb-[14rem]">
             <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-[80%] xl:w-[72%] lg:w-[80%] mx-auto">
                     <h1 className="font-quicksand text-mygreen font-semibold text-lg">About</h1>

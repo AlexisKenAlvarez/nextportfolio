@@ -58,21 +58,18 @@ const Projects: FunctionComponent = () => {
     return (
 
         <div className='max-w-[1600px] mx-auto mt-36 h-[150rem] flex flex-col relative'>
-            <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto '>
-                <h1 className="font-quicksand text-mygreen font-semibold text-lg">Some projects I've made</h1>
-                <div className='flex'>
+            <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto text-center'>
+                <h1 className="font-quicksand text-mygreen font-semibold text-lg lg:text-left">Some projects I've made</h1>
+                <div className='flex mx-auto w-fit lg:mx-0' ref={projTitle}>
                     {letters.map((letter, i) => {
 
                         return (
 
-                            <h2 key={i} className="text-4xl md:text-6xl font-raleway" style={wordArr.includes(letter) ? { fontWeight: 'bold' } : { fontWeight: 'regular' }}>{letter}</h2>
+                            <h2 key={i} className="text-4xl md:text-6xl font-raleway text-darkgrey" style={wordArr.includes(letter) ? { fontWeight: '800' } : { fontWeight: 'regular' }}>{letter}</h2>
                         )
                     })}
                 </div>
 
-                <div className='w-[15rem] h-[2px] bg-grey'>
-                    <div className='clip-path-underline w-28 h-16 bg-grey mt-1' ref={projTitle}></div>
-                </div>
             </div>
 
             <div>

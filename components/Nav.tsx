@@ -4,10 +4,18 @@ import { useState } from 'react';
 import { FunctionComponent } from 'react'
 import { AnimatePresence } from 'framer-motion';
 import SideNav from './SideNav';
+import Link from 'next/link';
 
 
 const Nav: FunctionComponent = () => {
-	const navitems = ['home', 'projects', 'contact']
+	const navitems = [
+		<Link href='/'>
+			home
+		</Link>, 
+		<Link href="/projects">
+			projects
+		</Link>, 
+		'contact']
 	const [navActive, setNav] = useState(false)
 
 	const handleClose = () => {
@@ -24,18 +32,17 @@ const Nav: FunctionComponent = () => {
 			<div>
 				<HiOutlineBars3BottomRight className='lg:hidden text-3xl' onClick={() => { setNav(true) }} />
 				<ul className='font-quicksand font-medium w-[29rem] justify-between items-center hidden lg:flex'>
-					{navitems.map((items) => {
+					{navitems.map((items, index) => {
 						return (
-							<div key={items}>
+							<div key={index}>
 								<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium">{items}&#40;&#41;</li>
 								<div className='w-0 rounded-full h-1 mt-1 bg-mygreen mx-auto peer-hover:w-6 transition-all ease-in-out pointer-events-none'></div>
 							</div>
 						)
 					})}
-					<div className='bg-black opacity-60 text-white px-5 py-2 select-none cursor-pointer hover:text-white hover:opacity-1 transition-all ease-in-out hover:bg-mygreen'>
+					<div className='  px-5 py-2 select-none w-fit bg-black opacity-70 text-white font-courier  rounded font-medium cursor-pointer hover:text-lightg hover:opacity-100 transition-all ease-in-out'>
 						terminal_
 					</div>
-
 				</ul>
 			</div>
 
