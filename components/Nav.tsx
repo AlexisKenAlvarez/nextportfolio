@@ -48,7 +48,7 @@ const Nav: FunctionComponent<myProp> = (props) => {
 					{navitems.map((items, index) => {
 						return (
 							<div key={index}>
-								<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium dark:hover:text-lightg" style={ router.route === items.route ? {color: activeColor} : {}}>{items.link}&#40;&#41;</li>
+								<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium dark:hover:text-lightg dark:text-white" style={ router.route === items.route ? {color: activeColor} : {}}>{items.link}&#40;&#41;</li>
 								<div className='w-0 rounded-full h-1 mt-1 bg-mygreen mx-auto peer-hover:w-5 transition-all ease-in-out pointer-events-none dark:bg-lightg' style={ router.route === items.route ? {width: "2.5rem"} : {}}></div>
 							</div>
 						)
