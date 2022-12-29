@@ -7,7 +7,7 @@ interface BoxProps {
 
 const Box: FunctionComponent<BoxProps> = (props) => {
     return (
-        <motion.div initial={{scale: 0.3}} animate={{scale: 1}} transition={{duration: 1.5, ease: [.21, 1.03, .27, 1]}} className="border-2 border-black w-36 h-40 shadow-forBox flex justify-center items-center select-none">
+        <motion.div initial={{scale: 0.3}} animate={{scale: 1}} transition={{duration: 1.5, ease: [.21, 1.03, .27, 1]}} className="border-2 border-black w-36 h-40 shadow-forBox flex justify-center items-center select-none dark:border-darkwhite dark:border-8 dark:bg-[#DCDCDC] dark:shadow-dark">
             {props.children}
         </motion.div>
     );

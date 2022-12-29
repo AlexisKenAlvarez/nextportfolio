@@ -6,7 +6,7 @@ const BoxGroup: FunctionComponent = () => {
     const Box2 = [
 
         <Image alt="node" src="/techs/node.webp" width="79" height="79" id="node" key='1' />,
-        <Image alt="react" src="/techs/react.webp" width="79" height="79" id="react" key="2" />
+        <Image alt="react" src="/techs/react.webp" width="79" height="79" id="react" key="2" className="dark:drop-shadow-md dark:brightness-50"/>
     ]
     const Box3 = [
 
@@ -31,7 +31,7 @@ const BoxGroup: FunctionComponent = () => {
                     )
                 })}
             </div>
-            <div className="flex flex-col gap-y-7">
+            <div className="flex-col gap-y-7 hidden xl:flex">
                 {Box3.map((items) => {
                     return (
                         <div key={items.key}>

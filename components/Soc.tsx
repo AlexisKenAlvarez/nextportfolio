@@ -3,11 +3,11 @@ import { soc } from "../utils/ObjectList";
 
 const Soc: FunctionComponent = () => {
     return (
-        <div className="fixed bottom-0 lg:bottom-2 lg:left-2 lg:w-10 w-full lg:h-72 h-12 bg-white lg:bg-transparent opacity-1 z-10">
+        <div className="fixed bottom-0 lg:bottom-2 lg:left-2 lg:w-10 w-full lg:h-72 h-12 bg-white lg:bg-transparent opacity-1 z-10 dark:bg-[#333333]">
             <ul className="flex lg:flex-col w-full justify-center items-center relative h-full pb-0">
                 {soc.map((items, index) => {
                     return (
-                        <li key={index} className="mx-3 lg:mb-4 text-2xl text-grey cursor-pointer hover:text-black transition-all ease-in-out">
+                        <li key={index} className="mx-3 lg:mb-4 text-2xl text-grey cursor-pointer dark:text-darkerwhite dark:hover:text-lightg hover:text-black transition-all ease-in-out duration-[0.3s]">
                             {items}
                         </li>
                     )

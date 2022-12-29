@@ -6,7 +6,7 @@ export const current = [
     {
         id: 1,
         name: 'NextJS', 
-        image: <Image alt="next" width="100" height="100" src="/current/next.webp" className='drop-shadow-md'/>
+        image: <Image alt="next" width="100" height="100" src="/current/next.webp" className='drop-shadow-md dark:invert'/>
     },
     {
         id: 2,
@@ -21,12 +21,12 @@ export const current = [
     {
         id: 4,
         name: 'MongoDB', 
-        image: <Image alt="mongodb" width="110" height="110" src="/current/mongo.webp" className='mb-[-1.5rem]'/>
+        image: <Image alt="mongodb" width="110" height="110" src="/current/mongo.webp" className='mb-[-1.5rem] dark:brightness-200 drop-shadow-lg'/>
     },
     {
         id: 5,
         name: 'Prisma', 
-        image: <Image alt="prisma" width="100" height="100" src="/current/prisma.webp" className='mb-[-1rem]'/>
+        image: <Image alt="prisma" width="100" height="100" src="/current/prisma.webp" className='mb-[-1rem] dark:invert dark:grayscale'/>
     } 
 ]
 
@@ -103,7 +103,7 @@ export const other = [
     {
         id: 11,
         name: 'NodeJS', 
-        image: <Image alt="nodejs" width="80" height="80" src="/otherskills/node.webp" className='mb-[-1rem] drop-shadow-md'/>
+        image: <Image alt="nodejs" width="80" height="80" src="/otherskills/node.webp" className='mb-[-1rem] drop-shadow-md dark:brightness-200'/>
     },
     {
         id: 12,

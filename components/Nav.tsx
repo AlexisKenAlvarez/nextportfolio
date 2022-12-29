@@ -7,8 +7,13 @@ import SideNav from './SideNav';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+interface myProp {
+	activeColor: string
+}
 
-const Nav: FunctionComponent = () => {
+const Nav: FunctionComponent<myProp> = (props) => {
+
+	const { activeColor } = props
 	const router = useRouter()
 	const navitems = [
 		{
@@ -33,18 +38,18 @@ const Nav: FunctionComponent = () => {
 	return (
 		<div className={`mynav p-7 flex items-center justify-between relative`}>
 			<div className='flex items-center w-fit cursor-pointer'>
-				<Image src="/icon.webp" alt="Logo" width="34" height="34" className='w-auto h-auto' />
-				<p className='font-quicksand font-medium ml-4 hover:text-mygreen transition-all ease-in-out'>alvarez.portfolio&#40;&#41;</p>
+				<Image src="/icon.webp" alt="Logo" width="34" height="34" className='w-auto h-auto dark:invert' />
+				<p className='font-quicksand font-medium ml-4 hover:text-mygreen transition-all ease-in-out dark:text-white dark:hover:text-lightg'>alvarez.portfolio&#40;&#41;</p>
 			</div>
 
 			<div>
-				<HiOutlineBars3BottomRight className='lg:hidden text-3xl' onClick={() => { setNav(true) }} />
+				<HiOutlineBars3BottomRight className='lg:hidden text-3xl dark:text-white' onClick={() => { setNav(true) }} />
 				<ul className='font-quicksand font-medium w-[29rem] justify-between items-center hidden lg:flex'>
 					{navitems.map((items, index) => {
 						return (
 							<div key={index}>
-								<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium" style={ router.route === items.route ? {color: "#588F62"} : {}}>{items.link}&#40;&#41;</li>
-								<div className='w-0 rounded-full h-1 mt-1 bg-mygreen mx-auto peer-hover:w-5 transition-all ease-in-out pointer-events-none' style={ router.route === items.route ? {width: "2.5rem"} : {}}></div>
+								<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium dark:hover:text-lightg" style={ router.route === items.route ? {color: activeColor} : {}}>{items.link}&#40;&#41;</li>
+								<div className='w-0 rounded-full h-1 mt-1 bg-mygreen mx-auto peer-hover:w-5 transition-all ease-in-out pointer-events-none dark:bg-lightg' style={ router.route === items.route ? {width: "2.5rem"} : {}}></div>
 							</div>
 						)
 					})}

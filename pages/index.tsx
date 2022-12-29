@@ -15,7 +15,7 @@ const Index = () => {
 			<div className="h-[38rem] lg:h-[45rem] w-full relative overflow-hidden">
 				<Hero />
 
-				<div className="w-[80%] xl:w-[70%] h-[1px] bg-grey mx-auto hidden lg:block mt-10"></div>
+				<div className="w-[80%] xl:w-[70%] h-[1px] bg-grey mx-auto hidden lg:block mt-16 dark:bg-darkwhite"></div>
 			</div>
 			<About />
 
