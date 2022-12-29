@@ -77,7 +77,7 @@ const Projects: FunctionComponent = () => {
 
     return (
 
-        <div className='max-w-[1600px] mx-auto mt-36 h-[150rem] flex flex-col relative'>
+        <div className='max-w-[1600px] mx-auto mt-36 h-auto flex flex-col relative'>
             <motion.div variants={variant} initial="initial" animate={projView ? "animate" : ""} className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto text-center'>
                 <h1 className="font-quicksand text-mygreen font-semibold text-lg lg:text-left dark:text-lightg">Some projects I&apos;ve made</h1>
                 <div className='flex mx-auto w-fit lg:mx-0' ref={projTitle}>

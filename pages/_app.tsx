@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
 	const [exit, setExit] = useState(false)
 	const [mode, setMode] = useState('')
+	const validPage = ['/projects', '/']
 
 	useEffect(() => {
 		exitFunc()
@@ -68,19 +69,27 @@ export default function App({ Component, pageProps }: AppProps) {
 		}, 2000);
 	}
 
+	const navSoc = (
+		<>
+			<Nav activeColor={mode === 'dark' ? "#5AE676" : "#588F62"} />
+			<Soc />
+			<div className='z-10 right-[2rem] top-[7rem] hidden lg:block fixed select-none hover:bg-darkwhite p-4 transition-all ease-in-out duration-[0.5s] clip-path-forMode dark:hover:bg-black cursor-pointer' onClick={toggleMode}>
+				<AnimatePresence>
+					{mode === 'light' ? <Sun /> : <Moon />}
+				</AnimatePresence>
+
+
+			</div>
+		</>
+	)
+
 	return (
 		<div className={`${mode}`}>
 			<div style={mode === 'dark' ? { background: "black" } : {}}>
 				<AnimatePresence mode="wait">
-					<motion.div style={scroll ? { overflowY: "auto" } : { overflow: "hidden" }} className="overflow-x-hidden w-full h-auto bg-topog dark:bg-[#333333]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
-						<Nav activeColor={mode === 'dark' ? "#5AE676" : "#588F62"} />
-						<Soc />
+					<motion.div style={scroll ? { overflowY: "auto" } : { overflow: "hidden" }} className="overflow-x-hidden w-full h-auto bg-topog dark:bg-black" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
 
-						<div className='z-10 right-[2rem] top-[7rem] hidden lg:block fixed select-none hover:bg-darkwhite p-4 transition-all ease-in-out duration-[0.5s] clip-path-forMode dark:hover:bg-black cursor-pointer' onClick={toggleMode}>
-							<AnimatePresence>
-								{mode === 'light' ? <Sun/> : <Moon/>}
-							</AnimatePresence>
-						</div>
+						{validPage.includes(router.route) ? navSoc : null}
 
 						<AnimatePresence>
 							{exit ? null : <Welcome />}
