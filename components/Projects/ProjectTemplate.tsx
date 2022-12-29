@@ -55,7 +55,7 @@ const ProjectTemplate: FunctionComponent<myProp> = (props) => {
                 </div>
 
                 <motion.div variants={variant} initial="initial" animate={selfView ? "animate" : "none"}>
-                    <p className='font-kanit text-mygreen font-semibold text-xl mb-8 mt-[-5px] p-0'>{num}</p>
+                    <p className='font-kanit text-mygreen font-semibold text-xl mb-8 mt-[-8px] p-0'>{num}</p>
                     <h1 className='text-4xl font-bold text-darkgrey'>{title}</h1>
                     <h2 className='text-darkgrey w-[22rem] font-medium'>{desc}</h2>
                     <div>

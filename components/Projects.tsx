@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useRef, useEffect } from 'react'
-import { useInView, useAnimation, motion } from "framer-motion"
+import { useInView, motion } from "framer-motion"
 import { genRandom } from '../utils/UsefulFunctions'
 import { projectList } from '../utils/ObjectList'
 import ProjectTemplate from './Projects/ProjectTemplate'
@@ -54,11 +54,31 @@ const Projects: FunctionComponent = () => {
         }
     }, [projView])
 
+    const variant = {
+        initial: {
+            opacity: 0,
+            x: -100,
+        },
+
+        animate: {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                ease: [.21, 1.03, .27, 1],
+                delay: 0.1
+            }
+        },
+
+        none: {}
+    }
+
 
     return (
 
         <div className='max-w-[1600px] mx-auto mt-36 h-[150rem] flex flex-col relative'>
-            <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto text-center'>
+            <motion.div variants={variant} initial="initial" animate={projView ? "animate" : ""} className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto text-center'>
                 <h1 className="font-quicksand text-mygreen font-semibold text-lg lg:text-left">Some projects I've made</h1>
                 <div className='flex mx-auto w-fit lg:mx-0' ref={projTitle}>
                     {letters.map((letter, i) => {
@@ -70,7 +90,7 @@ const Projects: FunctionComponent = () => {
                     })}
                 </div>
 
-            </div>
+            </motion.div>
 
             <div>
                 {projectList.map((items, index) => {
