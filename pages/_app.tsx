@@ -6,6 +6,7 @@ import Welcome from '../components/HeroAnimation/Welcome'
 import Nav from '../components/Nav'
 import Soc from '../components/Soc'
 import { useRouter } from 'next/router'
+import { HiSun } from 'react-icons/hi'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -25,6 +26,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 		activeScroll()
+		const stored = localStorage.getItem("mode")
+
+		if (!stored) {
+			localStorage.setItem("mode", "light")
+		}
+
 	}, [])
 
 
@@ -35,21 +42,22 @@ export default function App({ Component, pageProps }: AppProps) {
 	}
 
 	return (
-		<AnimatePresence mode="wait">
-			<motion.div style={scroll ? { overflow: "auto" } : { overflow: "hidden" }} className="w-full h-auto bg-topog" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
-				<Nav />
-				<Soc />
-				<AnimatePresence>
-					{exit ? null : <Welcome />}
-				</AnimatePresence>
+		<div>
+			<AnimatePresence mode="wait">
+				<motion.div style={scroll ? { overflowY: "auto" } : { overflow: "hidden" }} className="overflow-x-hidden w-full h-auto bg-topog bg-[#333333]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
+					<Nav />
+					<Soc />
+					<AnimatePresence>
+						{exit ? null : <Welcome />}
+					</AnimatePresence>
 
-				<motion.div>
-					<Component {...pageProps} />
-				</motion.div>
+					<motion.div>
+						<Component {...pageProps} />
+					</motion.div>
 
-			</motion.div >
-		</AnimatePresence >
-
+				</motion.div >
+			</AnimatePresence >
+		</div>
 	)
 
 }
