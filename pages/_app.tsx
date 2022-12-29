@@ -6,7 +6,9 @@ import Welcome from '../components/HeroAnimation/Welcome'
 import Nav from '../components/Nav'
 import Soc from '../components/Soc'
 import { useRouter } from 'next/router'
-import { HiSun, HiMoon } from 'react-icons/hi'
+import Sun from '../components/Modes/Sun'
+import Moon from '../components/Modes/Moon'
+
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -68,14 +70,18 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<div className={`${mode}`}>
-			<div style={ mode === 'dark' ? {background: "black"} : {}}>
+			<div style={mode === 'dark' ? { background: "black" } : {}}>
 				<AnimatePresence mode="wait">
 					<motion.div style={scroll ? { overflowY: "auto" } : { overflow: "hidden" }} className="overflow-x-hidden w-full h-auto bg-topog dark:bg-[#333333]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
 						<Nav activeColor={mode === 'dark' ? "#5AE676" : "#588F62"} />
 						<Soc />
-						<div className='z-10 right-[2rem] top-[7rem] hidden lg:block fixed select-none'>
-							<HiSun className='lg:text-4xl xl:text-5xl cursor-pointer' onClick={toggleMode} />
+
+						<div className='z-10 right-[2rem] top-[7rem] hidden lg:block fixed select-none hover:bg-darkwhite p-2 transition-all ease-in-out duration-[0.3s] rounded-full dark:hover:bg-black'>
+							<AnimatePresence>
+								{mode === 'light' ? <Sun toggleMode={toggleMode}/> : <Moon toggleMode={toggleMode}/>}
+							</AnimatePresence>
 						</div>
+
 						<AnimatePresence>
 							{exit ? null : <Welcome />}
 						</AnimatePresence>
