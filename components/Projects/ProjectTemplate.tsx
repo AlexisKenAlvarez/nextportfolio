@@ -44,7 +44,6 @@ const ProjectTemplate: FunctionComponent<myProp> = (props) => {
         },
 
         none: {}
-    
     }
 
     return (
@@ -59,9 +58,10 @@ const ProjectTemplate: FunctionComponent<myProp> = (props) => {
                     <p className='font-kanit text-mygreen font-semibold text-xl mb-8 mt-[-5px] p-0'>{num}</p>
                     <h1 className='text-4xl font-bold text-darkgrey'>{title}</h1>
                     <h2 className='text-darkgrey w-[22rem] font-medium'>{desc}</h2>
-                    <div ref={innerRef}>
+                    <div>
                         <Primary className="mt-6" text="View project" />
                         <div ref={selfRef}></div>
+                        <div ref={innerRef}></div>
                     </div>
                 </motion.div>
 

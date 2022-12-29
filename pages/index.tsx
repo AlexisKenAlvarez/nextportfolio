@@ -2,19 +2,14 @@ import Nav from "../components/Nav";
 import Head from 'next/head';
 import Hero from "../components/Hero";
 import About from "../components/About";
-import { useState, useEffect } from 'react'
-import Soc from "../components/Soc";
+import { motion } from "framer-motion";
 
 const Index = () => {
 
-
-
-
-
 	return (
-		<>
+		<motion.div>
 			<Head>
-				<title>Alexis Ken Alvarez</title>
+				<title>Alvarez</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 			</Head>
 
@@ -25,7 +20,7 @@ const Index = () => {
 			</div>
 			<About />
 
-		</>
+		</motion.div>
 	);
 }
 
