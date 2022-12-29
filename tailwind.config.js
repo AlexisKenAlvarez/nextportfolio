@@ -40,7 +40,8 @@ module.exports = {
       clipPath: {
         'divider': "polygon(50% 6%, 100% 0%, 100% 100%, 0 100%, 0 0)",
         'underline': "polygon(0 0, 100% 0, 76% 10%, 0 10%);",
-        'forButton': 'polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 50%)'
+        'forButton': 'polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 50%)',
+        'forMode': 'polygon(100% 0, 100% 79%, 81% 100%, 0 100%, 0 0);'
       },
     },
   },

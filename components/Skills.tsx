@@ -46,7 +46,7 @@ const Skills: FunctionComponent = () => {
                                     <div className='mx-auto w-[50%] border-t-2 border-mygreen mt-2 shadow-forBox dark:border-lightg'></div>
                                     <div className='mx-auto w-[20%] border-t-2 border-mygreen mt-2 shadow-forBox dark:border-lightg'></div>
                                 </div>
-                                <p className='absolute bottom-[-1rem] w-full text-center font-quicksand font-semibold text-grey select-none peer-hover:text-mygreen peer-hover:font-bold transition-all ease-in-out' ref={currentItems}>{items.name}</p>
+                                <p className='absolute bottom-[-1rem] w-full text-center font-quicksand font-semibold text-grey select-none peer-hover:text-mygreen peer-hover:font-bold transition-all ease-in-out dark:text-darkwhite dark:peer-hover:text-lightg' ref={currentItems}>{items.name}</p>
                             </motion.div>
                         )
                     })}
@@ -74,7 +74,7 @@ const Skills: FunctionComponent = () => {
                                     <div className='mx-auto w-[50%] border-t-2 border-mygreen mt-2 shadow-forBox dark:border-lightg'></div>
                                     <div className='mx-auto w-[20%] border-t-2 border-mygreen mt-2 shadow-forBox dark:border-lightg'></div>
                                 </div>
-                                <p className='absolute bottom-[-1rem] w-full text-center font-quicksand font-semibold text-grey select-none peer-hover:text-mygreen peer-hover:font-bold transition-all ease-in-out'>{items.name}</p>
+                                <p className='absolute bottom-[-1rem] w-full text-center font-quicksand font-semibold text-grey select-none peer-hover:text-mygreen peer-hover:font-bold transition-all ease-in-out dark:text-darkwhite dark:peer-hover:text-lightg'>{items.name}</p>
                             </motion.div>
                         )
                     })}

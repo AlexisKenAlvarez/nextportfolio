@@ -26,7 +26,7 @@ export const current = [
     {
         id: 5,
         name: 'Prisma', 
-        image: <Image alt="prisma" width="100" height="100" src="/current/prisma.webp" className='mb-[-1rem] dark:invert dark:grayscale'/>
+        image: <Image alt="prisma" width="100" height="100" src="/current/prisma.webp" className='mb-[-1rem] dark:greyscale dark:invert'/>
     } 
 ]
 
