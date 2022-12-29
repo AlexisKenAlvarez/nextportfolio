@@ -13,6 +13,11 @@ const Hero: FunctionComponent = () => {
             x: -100,
         },
 
+        boxInitial: {
+            opacity: 0,
+            x: 100,
+        },
+
         animate: {
             opacity: 1,
             x: 0,
@@ -26,7 +31,7 @@ const Hero: FunctionComponent = () => {
     }
 
     return (
-        <div className="flex h-[80%] w-full max-w-[1600px] mx-auto min-h-[550px] justify-center">
+        <div className="flex h-[80%] w-full max-w-[1600px] mx-auto min-h-[550px] justify-center mt-10">
             <motion.div variants={variant} initial="initial" animate="animate" className="w-full xl:w-[35%] lg:w-[50%]  h-[85%] font-raleway px-7 mt-5 text-center lg:text-left flex lg:items-center">
                 <div className="h-fit w-full lg:w-fit">
                     <p className="text-mygreen font-semibold text-md">Hey 👋, my name is</p>
@@ -47,10 +52,10 @@ const Hero: FunctionComponent = () => {
                 </div>
             </motion.div>
 
-            <div className="justify-center items-center w-[40%] hidden lg:flex">
+            <motion.div variants={variant} initial="boxInitial" animate="animate" className="justify-center items-center w-[40%] hidden lg:flex">
                 <BoxGroup />
 
-            </div>
+            </motion.div>
         </div>
     );
 }
