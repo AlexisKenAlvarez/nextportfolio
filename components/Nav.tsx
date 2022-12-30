@@ -18,15 +18,15 @@ const Nav: FunctionComponent<myProp> = (props) => {
 	const navitems = [
 		{
 			route: '/',
-			link: <Link href='/'>home</Link>
+			link: "home"
 		},
 		{
 			route: '/projects',
-			link: <Link href='/projects'>projects</Link>
+			link: "projects"
 		},
 		{
 			route: '/contact',
-			link: <Link href='/contact'>contact</Link>
+			link: "contact"
 		},
 	]
 	const [navActive, setNav] = useState(false)
@@ -47,10 +47,13 @@ const Nav: FunctionComponent<myProp> = (props) => {
 				<ul className='font-quicksand font-medium w-[29rem] justify-between items-center hidden lg:flex'>
 					{navitems.map((items, index) => {
 						return (
-							<div key={index}>
-								<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium dark:hover:text-lightg dark:text-white" style={ router.route === items.route ? {color: activeColor} : {}}>{items.link}&#40;&#41;</li>
-								<div className='w-0 rounded-full h-1 mt-1 bg-mygreen mx-auto peer-hover:w-5 transition-all ease-in-out pointer-events-none dark:bg-lightg' style={ router.route === items.route ? {width: "2.5rem"} : {}}></div>
-							</div>
+							<Link href={items.route} key={index}>
+								<div>
+									<li className="peer capitalize cursor-pointer hover:text-mygreen transition-all ease-in-out select-none font-medium dark:hover:text-lightg dark:text-white" style={router.route === items.route ? { color: activeColor } : {}}>{items.link}&#40;&#41;</li>
+									<div className='w-0 rounded-full h-1 mt-1 bg-mygreen mx-auto peer-hover:w-5 transition-all ease-in-out pointer-events-none dark:bg-lightg' style={router.route === items.route ? { width: "2.5rem" } : {}}></div>
+								</div>
+							</Link>
+
 						)
 					})}
 					<div className='  px-5 py-2 select-none w-fit bg-black opacity-70 text-white font-courier  rounded font-medium cursor-pointer hover:text-lightg hover:opacity-100 transition-all ease-in-out'>

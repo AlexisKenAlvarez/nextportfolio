@@ -72,12 +72,11 @@ export default function App({ Component, pageProps }: AppProps) {
 	const navSoc = (
 		<>
 			<Nav activeColor={mode === 'dark' ? "#5AE676" : "#588F62"} />
-			<Soc />
+			<Soc active={mode} onClick={toggleMode}/>
 			<div className='z-10 right-[2rem] top-[7rem] hidden lg:block fixed select-none hover:bg-darkwhite p-4 transition-all ease-in-out duration-[0.5s] clip-path-forMode dark:hover:bg-black cursor-pointer' onClick={toggleMode}>
 				<AnimatePresence>
-					{mode === 'light' ? <Sun /> : <Moon />}
+					{mode === 'light' ? <Sun className="lg:text-3xl xl:text-4xl"/> : <Moon className="lg:text-3xl xl:text-4xl" />}
 				</AnimatePresence>
-
 
 			</div>
 		</>

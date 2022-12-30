@@ -2,12 +2,16 @@ import { motion } from "framer-motion";
 import { HiSun } from 'react-icons/hi'
 import { FunctionComponent } from 'react'
 
+interface myProp {
+	className: string
+}
 
-const Sun: FunctionComponent  = () => {
+const Sun: FunctionComponent<myProp>  = (props) => {
+	const { className } = props
 
     return (
 		<motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
-			<HiSun className='lg:text-3xl xl:text-4xl cursor-pointer'/>
+			<HiSun className={`${className} cursor-pointer`}/>
 		</motion.div>
     );
 }
