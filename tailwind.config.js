@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  
+
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -27,14 +27,16 @@ module.exports = {
         'grey': '#7d7d7d',
         'darkgrey': '#4f4f4f',
         'darkwhite': '#cecece',
-        'darkerwhite': '#CCCCCC'
+        'darkerwhite': '#CCCCCC',
+        'notSoBlack': '#515151',
+        'lightBorder': '#929090'
       },
 
       backgroundImage: {
         'topog': "url('https://ik.imagekit.io/efpqj5mis/topog_fMXuZRb_k.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1671535737002')",
         'darktopog': "https://ik.imagekit.io/efpqj5mis/darktopogwebp_89ugekk5R.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672295291016')",
-        'blackTopog':  "url('https://ik.imagekit.io/efpqj5mis/darktopogwebp_89ugekk5R.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672295291016')",
-        
+        'blackTopog': "url('https://ik.imagekit.io/efpqj5mis/darktopogwebp_89ugekk5R.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1672295291016')",
+
       },
 
       clipPath: {
