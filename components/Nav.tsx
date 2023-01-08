@@ -9,9 +9,12 @@ import { useRouter } from 'next/router';
 
 interface myProp {
 	activeColor: string
+	onClick: () => void,
+	active: string
 }
 
 const Nav: FunctionComponent<myProp> = (props) => {
+	const { onClick, active } = props
 
 	const { activeColor } = props
 	const router = useRouter()
@@ -64,10 +67,8 @@ const Nav: FunctionComponent<myProp> = (props) => {
 
 
 			<AnimatePresence>
-				{navActive ? <SideNav close={handleClose} /> : null}
+				{navActive ? <SideNav close={handleClose} onClick={onClick} active={active}/> : null}
 			</AnimatePresence>
-
-
 
 		</div>
 	);

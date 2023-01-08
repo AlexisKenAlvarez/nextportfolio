@@ -9,6 +9,7 @@
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--secondary) var(--primary);
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 /* Chrome, Edge, and Safari */
@@ -26,6 +27,8 @@
     border-radius: 14px;
     border: 3px solid #cecece;
 }
+
+
 
 
 @tailwind components;

@@ -5,7 +5,8 @@ import SendButton from '../components/Buttons/SendButton';
 import { motion } from "framer-motion";
 
 const Contact: NextPage = () => {
-    const stored = localStorage.getItem("mode")
+
+    const stored = typeof window !== 'undefined' ? localStorage.getItem("mode") : null
 
     const variants = {
         initial: {

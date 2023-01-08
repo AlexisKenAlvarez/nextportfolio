@@ -48,6 +48,22 @@ export const soc = [
     </a>,
 ]
 
+export const sideItems = [
+    {
+        label: "home",
+        link: "/"
+    },
+    {
+        label: "projects",
+        link: "/projects"
+    },
+    {
+        label: "contact",
+        link: "/contact"
+    },
+
+]
+
 
 export const other = [
     {
