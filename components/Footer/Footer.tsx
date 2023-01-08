@@ -15,11 +15,8 @@ const Footer = () => {
     const [copyRef, copyView] = useInView({ triggerOnce: true })
 
     useEffect(() => {
-        if (sendView) {
-            controls.start("visible")
-            console.log("IN VIEW");
-        }
-    }, [sendView, controls])
+        console.log(isView)
+    }, [isView])
 
     const variants = {
         initialLeft: {
@@ -51,8 +48,8 @@ const Footer = () => {
             <div className='flex justify-between mx-auto w-[80%] md:mt-20 mt-10'>
                 <div className='text-notSoBlack md:text-5xl font-extrabold text-3xl text-center w-full md:w-auto md:text-left'>
                     <div className='relative md:pb-2 pb-1 w-fit mx-auto md:mx-0 overflow-hidden'>
-                        <motion.h2 ref={isRef} initial={{ opacity: 0 }} animate={isView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }}>Is there a spark?</motion.h2>
-                        <motion.div  variants={variants} initial="initialLeft" animate={sendView ? "animateLeft" : "none"} className='absolute w-full h-full bg-mygreen top-0 z-10'></motion.div>
+                        <motion.h2 initial={{ opacity: 0 }} animate={sendView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className=" text-center">Is there a spark?</motion.h2>
+                        <motion.div ref={sendRef}  variants={variants} initial="initialLeft" animate={sendView ? "animateLeft" : "none"} className='absolute w-full h-full bg-mygreen top-0 z-10'></motion.div>
 
                     </div>
                     <div className='relative md:pb-2 pb-1 w-fit mx-auto md:mx-0 overflow-hidden'>
