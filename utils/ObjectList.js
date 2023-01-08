@@ -160,7 +160,7 @@ export const info2 = [
     {
         id: '4',
         label: 'Hobbies',
-        value: 'Coding, Gaming, Cycling'
+        value: 'Study programming, Gaming, Cycling, Chess',
     },
 ]
 
