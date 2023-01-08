@@ -10,7 +10,7 @@ const Projects: NextPage = () => {
         <>
 			<Head>
 				<title>Alvarez | Projects</title>
-				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="projects" />
 			</Head>
 
             <div className="w-full h-fit overflow-x-hidden">
