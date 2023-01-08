@@ -57,7 +57,7 @@ const About: FunctionComponent = () => {
 
                     </div>
                     <div className="md:flex sm:gap-3">
-                        <div className="border-[1px] border-black shadow-forBox h-fit flex flex-col gap-y-10 p-5 pb-[2.3rem] dark:pb-[1.3rem] mt-5 w-full max-w-[360px] sm:max-w-[1600px] xl:flex-row lg:pl-14 xl:gap-x-16 2xl:gap-x-32 dark:border-darkwhite dark:border-8 dark:bg-[#DCDCDC] dark:shadow-dark border-box">
+                        <div className="border-[1px] border-black shadow-forBox h-fit flex flex-col gap-y-10 p-5 pb-[2.3rem] dark:pb-[1.3rem] mt-5 w-full max-w-[360px] sm:max-w-[1600px] xl:flex-row lg:pl-14 xl:gap-x-16 2xl:gap-x-32 dark:border-darkwhite dark:border-8 dark:bg-[#DCDCDC] dark:shadow-dark border-box mb-10">
 
                             <div className="font-raleway font-medium mt-6">
                                 {info1.map(details => {
@@ -86,7 +86,7 @@ const About: FunctionComponent = () => {
 
                         </div>
                         <div className="flex flex-col md:flex-col">
-                            <div className='relative overflow-hidden w-fit h-fit mt-10' ref={anotherRef}>
+                            <div className='relative overflow-hidden w-fit h-fit' ref={anotherRef}>
                                 <motion.h2 initial={{ opacity: 0 }} animate={anotherView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold md:hidden dark:text-white text-notSoBlack">Years of experience</motion.h2>
                                 <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialLeft" animate={anotherView ? "animateLeft" : "none"} ></motion.div>
                             </div>
