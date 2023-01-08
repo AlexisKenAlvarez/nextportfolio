@@ -74,7 +74,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	const activeScroll = () => {
 		setTimeout(() => {
 			setScroll(true)
-		}, 2000);
+		}, 3000);
 	}
 
 
@@ -92,7 +92,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	)
 
 	return (
-		<div className={`${mode}`}>
+		<div className={`${mode} ${scroll ? 'overflow-auto h-auto': 'overflow-hidden h-screen'}`}>
 			<div style={mode === 'dark' ? { background: "black" } : {}}>
 				<AnimatePresence mode="wait">
 					<motion.div className="overflow-x-hidden w-full h-auto bg-topog dark:bg-black" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
