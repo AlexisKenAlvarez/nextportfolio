@@ -9,9 +9,9 @@ interface myProp {
     title: string,
     desc: string,
     img: string,
-    innerRef?: MutableRefObject<null> | null,
+    innerRef?: (node?: Element | null | undefined) => void,
     view: boolean
-    selfRef: MutableRefObject<null> | null,
+    selfRef: (node?: Element | null | undefined) => void,
     selfView: boolean
 }
 

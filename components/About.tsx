@@ -8,6 +8,8 @@ import { motion, } from "framer-motion"
 const About: FunctionComponent = () => {
 
     const [aboutRef, aboutView] = useInView({ triggerOnce: true })
+    const [anotherRef, anotherView] = useInView({ triggerOnce: true })
+
 
     const variants = {
         initialLeft: {
@@ -48,13 +50,13 @@ const About: FunctionComponent = () => {
                             <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialLeft" animate={aboutView ? "animateLeft" : "none"} ></motion.div>
                         </div>
 
-                        <div className='relative overflow-hidden flex'>
-                            <motion.h2  initial={{ opacity: 0 }} animate={aboutView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold hidden lg:block text-notSoBlack dark:text-white self-end">Years of experience</motion.h2>
+                        <div className='relative overflow-hidden h-fit self-end'>
+                            <motion.h2 initial={{ opacity: 0 }} animate={aboutView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold hidden md:block text-notSoBlack dark:text-white">Years of experience</motion.h2>
                             <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialRight" animate={aboutView ? "animateRight" : "none"} ></motion.div>
                         </div>
-                        
+
                     </div>
-                    <div className="sm:flex sm:gap-3">
+                    <div className="md:flex sm:gap-3">
                         <div className="border-[1px] border-black shadow-forBox h-fit flex flex-col gap-y-10 p-5 pb-[2.3rem] dark:pb-[1.3rem] mt-5 w-full max-w-[360px] sm:max-w-[1600px] xl:flex-row lg:pl-14 xl:gap-x-16 2xl:gap-x-32 dark:border-darkwhite dark:border-8 dark:bg-[#DCDCDC] dark:shadow-dark border-box">
 
                             <div className="font-raleway font-medium mt-6">
@@ -83,9 +85,13 @@ const About: FunctionComponent = () => {
                             </div>
 
                         </div>
-                        <div className="flex flex-col sm:flex-col-reverse lg:flex-col">
-                            <h2 className="text-2xl font-raleway font-semibold lg:hidden mt-10 sm:text-right sm:w-[11rem] dark:text-white">Years of experience</h2>
-                            <div className="flex gap-x-2 font-raleway text-center mt-5 sm:flex-col sm:gap-y-3">
+                        <div className="flex flex-col md:flex-col">
+                            <div className='relative overflow-hidden w-fit h-fit mt-10' ref={anotherRef}>
+                                <motion.h2 initial={{ opacity: 0 }} animate={anotherView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold md:hidden dark:text-white text-notSoBlack">Years of experience</motion.h2>
+                                <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialLeft" animate={anotherView ? "animateLeft" : "none"} ></motion.div>
+                            </div>
+
+                            <div className="flex gap-x-2 font-raleway text-center mt-5 md:flex-col sm:gap-y-3">
                                 <div className="border-[1px] border-black shadow-forBox h-fit py-10 w-[11rem] dark:py-[2.1rem] dark:border-darkwhite dark:border-8 dark:bg-[#DCDCDC] dark:shadow-dark">
                                     <h1 className="text-5xl mb-7 font-semibold text-mygreen dark:text-[#649f5b]">3+</h1>
                                     <p className='dark:text-black font-semibold text-grey'>HTML, CSS, JS</p>
