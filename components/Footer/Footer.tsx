@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
 import Underline from '../Modes/Underline';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
-    const controls = useAnimation();
     const [hMessage, setHoverMessage] = useState(false)
-
+    const router = useRouter()
     const [sendRef, sendView] = useInView({ triggerOnce: true })
     const [isRef, isView] = useInView({ triggerOnce: true })
     const [logoRef, logoView] = useInView({ triggerOnce: true })
@@ -50,6 +50,10 @@ const Footer = () => {
         none: {}
     }
 
+    const handleMessage = () => {
+        router.push('/contact')
+    }
+
     return (
         <footer className='w-full md:h-[30rem] h-[25rem] bg-white relative font-raleway overflow-hidden dark:bg-footerBlack'>
             <div className='flex justify-between mx-auto w-[80%] md:mt-20 mt-10'>
@@ -61,7 +65,7 @@ const Footer = () => {
                     </div>
                     <div className='relative md:pb-2 pb-1 w-fit mx-auto md:mx-0 overflow-hidden'>
                         <motion.h2 initial={{ opacity: 0 }} animate={sendView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className='mt-4'>Send me a
-                            <span className='text-mygreen dark:text-lightg cursor-pointer relative z-10' onMouseEnter={() => { setHoverMessage(true) }} onMouseLeave={() => { setHoverMessage(false) }}> message.
+                            <span className='text-mygreen dark:text-lightg cursor-pointer relative z-10' onMouseEnter={() => { setHoverMessage(true) }} onMouseLeave={() => { setHoverMessage(false) }} onClick={handleMessage}> message.
                                 <AnimatePresence>
                                     {hMessage ? <Underline /> : null}
                                 </AnimatePresence>
