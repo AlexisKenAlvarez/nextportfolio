@@ -24,7 +24,7 @@ const Contact: FunctionComponent<myProp> = (props) => {
                 <div className='overflow-hidden lg:ml-14 xl:ml-20 lg:mt-5 mx-auto'>
                     <div className='w-fit mx-auto mt-16'>
                         <p className='w-fit text-center mb-2 font-semibold text-mygreen'>Contact</p>
-                        <h1 className='font-raleway text-notSoBlack font-[900] lg:text-4xl lg:w-[25rem] text-3xl w-[18rem]'>Let's talk and build together.</h1>
+                        <h1 className='font-raleway text-notSoBlack font-[900] lg:text-4xl lg:w-[25rem] text-3xl w-[18rem]'>Let&apos;s talk and build together.</h1>
                     </div>
 
                     <div className='text-lightBorder lg:ml-2 font-quicksand'>
