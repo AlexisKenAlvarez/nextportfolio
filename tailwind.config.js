@@ -29,7 +29,8 @@ module.exports = {
         'darkwhite': '#cecece',
         'darkerwhite': '#CCCCCC',
         'notSoBlack': '#515151',
-        'lightBorder': '#929090'
+        'lightBorder': '#929090',
+        'footerBlack': "#0C0C0C"
       },
 
       backgroundImage: {

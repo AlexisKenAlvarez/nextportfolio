@@ -36,7 +36,7 @@ const Skills: FunctionComponent = () => {
                         <h1 className='dark:text-white text-5xl font-raleway font-extrabold text-notSoBlack'>Current Stack</h1>
                     </motion.div>
 
-                    <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initial" animate={cTextView ? "animate" : "none"} ></motion.div>
+                    <motion.div className='absolute w-full h-full bg-mygreen top-0 dark:bg-lightg' variants={variants} initial="initial" animate={cTextView ? "animate" : "none"} ></motion.div>
                 </div>
 
                 <div className="w-full h-auto grid grid-cols-2 grid-rows-3 items-center justify-items-center gap-y-7 max-w-[300px] sm:max-w-[500px] sm:gap-y-10 sm:grid-cols-3 sm:grid-rows-2 md:max-w-[700px] md:grid-cols-4 lg:max-w-full lg:grid-cols-5 lg:grid-rows-1 mx-auto mt-20">
@@ -68,9 +68,7 @@ const Skills: FunctionComponent = () => {
                         <h1 className='dark:text-white text-5xl font-raleway font-extrabold text-notSoBlack' ref={oTextRef}>Other skills</h1>
                     </motion.div>
 
-
-
-                    <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initial" animate={oTextView ? "animate" : "none"} ></motion.div>
+                    <motion.div className='absolute w-full h-full bg-mygreen dark:bg-lightg top-0' variants={variants} initial="initial" animate={oTextView ? "animate" : "none"} ></motion.div>
                 </div>
 
                 <div className="w-full h-auto grid grid-cols-2 grid-rows-3 items-center justify-items-center gap-y-9 max-w-[300px] sm:max-w-[500px] sm:gap-y-10 sm:grid-cols-3 sm:grid-rows-2 md:max-w-[700px] md:grid-cols-4 lg:gap-y-16  lg:max-w-full lg:grid-cols-5 lg:grid-rows-1 mx-auto mt-20 relative">

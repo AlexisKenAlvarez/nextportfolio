@@ -47,12 +47,12 @@ const About: FunctionComponent = () => {
                                 <h2 className="text-2xl font-raleway font-semibold text-notSoBlack dark:text-white">Everything you need to know</h2>
                             </motion.div>
 
-                            <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialLeft" animate={aboutView ? "animateLeft" : "none"} ></motion.div>
+                            <motion.div className='absolute w-full h-full bg-mygreen dark:bg-lightg top-0' variants={variants} initial="initialLeft" animate={aboutView ? "animateLeft" : "none"} ></motion.div>
                         </div>
 
                         <div className='relative overflow-hidden h-fit self-end'>
                             <motion.h2 initial={{ opacity: 0 }} animate={aboutView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold hidden md:block text-notSoBlack dark:text-white">Years of experience</motion.h2>
-                            <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialRight" animate={aboutView ? "animateRight" : "none"} ></motion.div>
+                            <motion.div className='absolute w-full h-full bg-mygreen dark:bg-lightg top-0' variants={variants} initial="initialRight" animate={aboutView ? "animateRight" : "none"} ></motion.div>
                         </div>
 
                     </div>
@@ -88,7 +88,7 @@ const About: FunctionComponent = () => {
                         <div className="flex flex-col md:flex-col">
                             <div className='relative overflow-hidden w-fit h-fit' ref={anotherRef}>
                                 <motion.h2 initial={{ opacity: 0 }} animate={anotherView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold md:hidden dark:text-white text-notSoBlack">Years of experience</motion.h2>
-                                <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialLeft" animate={anotherView ? "animateLeft" : "none"} ></motion.div>
+                                <motion.div className='absolute w-full h-full bg-mygreen dark:bg-lightg top-0' variants={variants} initial="initialLeft" animate={anotherView ? "animateLeft" : "none"} ></motion.div>
                             </div>
 
                             <div className="flex gap-x-2 font-raleway text-center mt-5 md:flex-col sm:gap-y-3">

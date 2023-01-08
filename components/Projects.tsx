@@ -48,7 +48,7 @@ const Projects: FunctionComponent = () => {
                         <h1 className="font-quicksand text-mygreen font-semibold text-lg lg:text-left dark:text-lightg">Works</h1>
                         <h1 className='dark:text-white text-5xl font-raleway font-extrabold text-notSoBlack'>PROJECTS</h1>
                     </motion.div>
-                    <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initial" animate={projView ? "animate" : "none"} ></motion.div>
+                    <motion.div className='absolute w-full h-full bg-mygreen dark:bg-lightg top-0' variants={variants} initial="initial" animate={projView ? "animate" : "none"} ></motion.div>
                 </div>
 
 
