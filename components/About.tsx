@@ -2,17 +2,57 @@ import { FunctionComponent } from 'react'
 import { info1, info2 } from '../utils/ObjectList';
 import Projects from './Projects';
 import Skills from './Skills';
+import { useInView } from "react-intersection-observer";
+import { motion, } from "framer-motion"
 
 const About: FunctionComponent = () => {
+
+    const [aboutRef, aboutView] = useInView({ triggerOnce: true })
+
+    const variants = {
+        initialLeft: {
+            x: "-100%"
+        },
+
+        initialRight: {
+            x: "-100%"
+        },
+        animateLeft: {
+            x: ["-101%", "0%", "101%"],
+            transition: {
+                duration: 1.2,
+                delay: 0.3
+            }
+        },
+        animateRight: {
+            x: ["101%", "0%", "-101%"],
+            transition: {
+                duration: 1.2,
+                delay: 0.3
+            }
+        },
+        none: {}
+    }
 
     return (
         <div className="h-fit w-full relative z-[1]">
             <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-[80%] xl:w-[72%] lg:w-[80%] mx-auto">
-                    <h1 className="font-quicksand text-mygreen font-semibold text-lg dark:text-lightg">About</h1>
                     <div className="flex justify-between dark:text-white">
-                        <h2 className="text-2xl font-raleway font-semibold">Everything you need to know</h2>
-                        <h2 className="text-2xl font-raleway font-semibold hidden lg:block">Years of experience</h2>
+                        <div className='relative overflow-hidden' ref={aboutRef}>
+                            <motion.div initial={{ opacity: 0 }} animate={aboutView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }}>
+                                <h1 className="font-quicksand text-mygreen font-semibold text-lg dark:text-lightg">About</h1>
+                                <h2 className="text-2xl font-raleway font-semibold text-notSoBlack dark:text-white">Everything you need to know</h2>
+                            </motion.div>
+
+                            <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialLeft" animate={aboutView ? "animateLeft" : "none"} ></motion.div>
+                        </div>
+
+                        <div className='relative overflow-hidden flex'>
+                            <motion.h2  initial={{ opacity: 0 }} animate={aboutView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className="text-2xl font-raleway font-semibold hidden lg:block text-notSoBlack dark:text-white self-end">Years of experience</motion.h2>
+                            <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initialRight" animate={aboutView ? "animateRight" : "none"} ></motion.div>
+                        </div>
+                        
                     </div>
                     <div className="sm:flex sm:gap-3">
                         <div className="border-[1px] border-black shadow-forBox h-fit flex flex-col gap-y-10 p-5 pb-[2.3rem] dark:pb-[1.3rem] mt-5 w-full max-w-[360px] sm:max-w-[1600px] xl:flex-row lg:pl-14 xl:gap-x-16 2xl:gap-x-32 dark:border-darkwhite dark:border-8 dark:bg-[#DCDCDC] dark:shadow-dark border-box">
@@ -61,11 +101,11 @@ const About: FunctionComponent = () => {
                 </div>
 
                 {/* SKILLS */}
-                <Skills/>
+                <Skills />
 
             </div>
 
-            <Projects/>
+            <Projects />
         </div>
     );
 }

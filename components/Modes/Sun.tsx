@@ -11,7 +11,7 @@ const Sun: FunctionComponent<myProp>  = (props) => {
 
     return (
 		<motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
-			<HiSun className={`${className} cursor-pointer`}/>
+			<HiSun className={`${className} cursor-pointer text-notSoBlack`}/>
 		</motion.div>
     );
 }

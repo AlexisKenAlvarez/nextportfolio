@@ -8,7 +8,7 @@ import Footer from '../components/Footer/Footer';
 const Index = () => {
 	
 	return (
-		<div>
+		<div className=''>
 			<Head>
 				<title>Alvarez</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />

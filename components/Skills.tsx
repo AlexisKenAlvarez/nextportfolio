@@ -1,37 +1,45 @@
 import { FunctionComponent } from 'react'
 import { current, other } from '../utils/ObjectList';
-import { useInView, useAnimation, motion, delay } from "framer-motion"
-import { useRef, useEffect, useState } from 'react';
-import { genRandom } from '../utils/UsefulFunctions';
+import { motion, } from "framer-motion"
+import { useInView } from "react-intersection-observer";
+
 
 const Skills: FunctionComponent = () => {
 
-    const textDiv = useRef(null)
-    const inView = useInView(textDiv, { once: true })
-    const introAnimation = useAnimation()
+    const [cTextRef, cTextView] = useInView({ triggerOnce: true })
+    const [oTextRef, oTextView] = useInView({ triggerOnce: true })
 
-    const currentItems = useRef(null)
-    const currentView = useInView(currentItems, { once: true })
+    const [currentItems, currentView] = useInView({ triggerOnce: true })
+    const [otherItems, otherView] = useInView({ triggerOnce: true })
 
-    const otherItems = useRef(null)
-    const otherView = useInView(otherItems, { once: true })
+    const variants = {
+        initial: {
+            x: "-100%"
+        },
+
+        animate: {
+            x: ["-101%", "0%", "101%"],
+            transition: {
+                duration: 1.2,
+                delay: 0.3
+            }
+        },
+    }
 
     return (
         <>
             <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto mt-36'>
 
-                <motion.div animate={introAnimation} ref={textDiv}>
-                    <h2 className="font-quicksand text-mygreen font-semibold text-lg dark:text-lightg">Skills</h2>
-                    <h1 className='dark:text-white text-4xl font-raleway font-semibold'>Current Stack</h1>
+                <div className="relative w-fit overflow-hidden" ref={cTextRef} >
+                    <motion.div initial={{ opacity: 0 }} animate={cTextView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} >
+                        <h2 className="font-quicksand text-mygreen font-bold text-lg dark:text-lightg">Skills</h2>
+                        <h1 className='dark:text-white text-5xl font-raleway font-extrabold text-notSoBlack'>Current Stack</h1>
+                    </motion.div>
 
-                    <div className='w-[8rem] h-[2px] bg-grey dark:bg-darkwhite'>
-                        <div className='clip-path-underline w-14 h-16 bg-grey mt-1 dark:bg-darkwhite'></div>
-                    </div>
-                </motion.div>
+                    <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initial" animate={cTextView ? "animate" : "none"} ></motion.div>
+                </div>
 
-
-
-                <div className="w-full h-auto grid grid-cols-2 grid-rows-3 items-center justify-items-center gap-y-7 max-w-[300px] sm:max-w-[500px] sm:gap-y-10 sm:grid-cols-3 sm:grid-rows-2 md:max-w-[700px] md:grid-cols-4 lg:max-w-full lg:grid-cols-5 lg:grid-rows-1 mx-auto mt-12">
+                <div className="w-full h-auto grid grid-cols-2 grid-rows-3 items-center justify-items-center gap-y-7 max-w-[300px] sm:max-w-[500px] sm:gap-y-10 sm:grid-cols-3 sm:grid-rows-2 md:max-w-[700px] md:grid-cols-4 lg:max-w-full lg:grid-cols-5 lg:grid-rows-1 mx-auto mt-20">
                     {current.map((items, index) => {
                         return (
                             <motion.div initial={{ y: 50, opacity: 0 }} animate={currentView ? { y: 0, opacity: 1 } : {}}
@@ -54,9 +62,16 @@ const Skills: FunctionComponent = () => {
             </div>
 
             <div className='w-[80%] xl:w-[72%] lg:w-[80%] mx-auto mt-36'>
-                <h2 className="text-4xl font-raleway font-semibold text-center dark:text-white">Other Skills</h2>
+                <div className='relative w-fit overflow-hidden'>
+                    <motion.div initial={{ opacity: 0 }} animate={oTextView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} >
+                        <h2 className="font-quicksand text-mygreen font-bold text-lg dark:text-lightg">Also studied</h2>
+                        <h1 className='dark:text-white text-5xl font-raleway font-extrabold text-notSoBlack' ref={oTextRef}>Other skills</h1>
+                    </motion.div>
 
 
+
+                    <motion.div className='absolute w-full h-full bg-mygreen top-0' variants={variants} initial="initial" animate={oTextView ? "animate" : "none"} ></motion.div>
+                </div>
 
                 <div className="w-full h-auto grid grid-cols-2 grid-rows-3 items-center justify-items-center gap-y-9 max-w-[300px] sm:max-w-[500px] sm:gap-y-10 sm:grid-cols-3 sm:grid-rows-2 md:max-w-[700px] md:grid-cols-4 lg:gap-y-16  lg:max-w-full lg:grid-cols-5 lg:grid-rows-1 mx-auto mt-20 relative">
                     <div className='bg-transparent absolute w-5 h-5 top-0 mt-[25rem]' ref={otherItems}></div>

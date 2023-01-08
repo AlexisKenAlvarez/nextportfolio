@@ -15,8 +15,16 @@ export default function App({ Component, pageProps }: AppProps) {
 	const [exit, setExit] = useState(false)
 	const [mode, setMode] = useState('')
 	const validPage = ['/projects', '/']
+	const { pathname } = useRouter();
 
 	useEffect(() => {
+		// some browsers (like safari) may require a timeout to delay calling this
+		// function after a page has loaded; otherwise, it may not update the position
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	useEffect(() => {
+
 		exitFunc()
 	}, [])
 
@@ -27,13 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		}, 2000);
 	}
 
-	useEffect(() => {
-		activeScroll()
 
-	}, [])
-
-
-	const [scroll, setScroll] = useState(false)
 
 
 
@@ -62,6 +64,12 @@ export default function App({ Component, pageProps }: AppProps) {
 		}
 	}
 
+	const [scroll, setScroll] = useState(false)
+
+	useEffect(() => {
+		activeScroll()
+		console.log(scroll);
+	}, [scroll])
 
 	const activeScroll = () => {
 		setTimeout(() => {
@@ -69,13 +77,14 @@ export default function App({ Component, pageProps }: AppProps) {
 		}, 2000);
 	}
 
+
 	const navSoc = (
 		<>
 			<Nav activeColor={mode === 'dark' ? "#5AE676" : "#588F62"} />
-			<Soc active={mode} onClick={toggleMode}/>
+			<Soc active={mode} onClick={toggleMode} />
 			<div className='z-10 right-[2rem] top-[7rem] hidden lg:block fixed select-none hover:bg-darkwhite p-4 transition-all ease-in-out duration-[0.5s] clip-path-forMode dark:hover:bg-black cursor-pointer' onClick={toggleMode}>
 				<AnimatePresence>
-					{mode === 'light' ? <Sun className="lg:text-3xl xl:text-4xl"/> : <Moon className="lg:text-3xl xl:text-4xl" />}
+					{mode === 'light' ? <Sun className="lg:text-3xl xl:text-4xl" /> : <Moon className="lg:text-3xl xl:text-4xl" />}
 				</AnimatePresence>
 
 			</div>
@@ -86,7 +95,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<div className={`${mode}`}>
 			<div style={mode === 'dark' ? { background: "black" } : {}}>
 				<AnimatePresence mode="wait">
-					<motion.div style={scroll ? { overflowY: "auto" } : { overflow: "hidden" }} className="overflow-x-hidden w-full h-auto bg-topog dark:bg-black" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
+					<motion.div className="overflow-x-hidden w-full h-auto bg-topog dark:bg-black" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
 
 						{validPage.includes(router.route) ? navSoc : null}
 
