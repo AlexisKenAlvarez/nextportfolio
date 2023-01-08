@@ -63,7 +63,7 @@ const SideNav: FunctionComponent<myProp> = (props) => {
                     <AnimatePresence>
                         {sideItems.map((items, i) => {
                             return (
-                                <Link href={items.link}>
+                                <Link href={items.link} key={i}>
                                     <motion.li initial={{ y: 50 }} animate={{ y: 0 }} transition={{ duration: 1, delay: i * 0.08 }} className="mb-10">{items.label}&#40;&#41;</motion.li>
                                 </Link>
 
