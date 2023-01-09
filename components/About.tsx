@@ -7,8 +7,13 @@ import { motion, } from "framer-motion"
 
 const About: FunctionComponent = () => {
 
-    const [aboutRef, aboutView] = useInView({ triggerOnce: true })
-    const [anotherRef, anotherView] = useInView({ triggerOnce: true })
+    const options = {
+        triggerOnce: true,
+        thresold: 0.5
+    }
+
+    const [aboutRef, aboutView] = useInView(options)
+    const [anotherRef, anotherView] = useInView(options)
 
 
     const variants = {

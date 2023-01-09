@@ -8,16 +8,21 @@ import { useInView } from "react-intersection-observer";
 
 const Projects: FunctionComponent = () => {
 
-    const [projTitle, projView] = useInView({ triggerOnce: true })
+    const options = {
+        triggerOnce: true,
+        thresold: 0.5
+    }
 
-    const [proj2, view2] = useInView({ triggerOnce: true })
-    const [proj3, view3] = useInView({ triggerOnce: true })
+    const [projTitle, projView] = useInView(options)
+
+    const [proj2, view2] = useInView(options)
+    const [proj3, view3] = useInView(options)
 
     const refArr = [undefined, proj2, proj3]
 
-    const [self1, selfView1] = useInView({ triggerOnce: true })
-    const [self2, selfView2] = useInView({ triggerOnce: true })
-    const [self3, selfView3] = useInView({ triggerOnce: true })
+    const [self1, selfView1] = useInView(options)
+    const [self2, selfView2] = useInView(options)
+    const [self3, selfView3] = useInView(options)
 
     const selfRefArr = [self1, self2, self3]
     const selfViewArr = [selfView1, selfView2, selfView3]
