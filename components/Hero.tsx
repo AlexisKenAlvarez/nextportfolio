@@ -38,7 +38,7 @@ const Hero: FunctionComponent = () => {
                     <div className="dark:text-white">
                         <h1 className="font-black text-3xl md:text-5xl mt-3">Alexis Ken Alvarez</h1>
                         <h2 className="font-black text-2xl md:text-4xl mt-1 opacity-70 relative z-[-1]">Full stack developer</h2>
-                        <h3 className="font-medium text-grey max-w-[400px] text-[16px] mx-auto lg:mx-0 mt-4 dark:text-white opacity-70">I’m a junior web developer from Philippines. I have a passion on building websites and designing UI/UX. I’m currently focusing on NextJS and also website responsiveness. I explore new lessons everyday to improve my skills.</h3>
+                        <h3 className="font-medium text-grey max-w-[400px] text-[16px] mx-auto lg:mx-0 mt-4 dark:text-white opacity-70">I’m a junior web developer from Philippines. I have a passion on building websites and designing clean UI. I’m currently focusing on NextJS and also website responsiveness. I explore new lessons everyday to improve my skills.</h3>
                     </div>
 
                     <div className="flex items-center mt-14 mx-auto lg:mx-0 w-fit select-none">

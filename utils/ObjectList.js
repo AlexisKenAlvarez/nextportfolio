@@ -21,7 +21,7 @@ export const current = [
     {
         id: 4,
         name: 'MongoDB', 
-        image: <Image alt="mongodb" width="110" height="110" src="/current/mongo.webp" className='mb-[-1.5rem] dark:brightness-200 drop-shadow-lg'/>
+        image: <Image alt="mongodb" width="110" height="110" src="/current/mongo.webp" className='mb-[-1.5rem] dark:brightness-200 drop-shadow-lg dark:invert'/>
     },
     {
         id: 5,
