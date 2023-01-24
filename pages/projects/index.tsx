@@ -1,7 +1,5 @@
 import { NextPage } from "next";
-import Nav from "../components/Nav";
-import Soc from "../components/Soc";
-import Proj from "../components/Projects";
+import Proj from "../../components/Projects"
 import Head from 'next/head';
 
 const Projects: NextPage = () => {

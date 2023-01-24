@@ -40,10 +40,13 @@ const Nav: FunctionComponent<myProp> = (props) => {
 
 	return (
 		<div className={`mynav p-7 flex items-center justify-between relative z-40`}>
-			<div className='flex items-center w-fit cursor-pointer'>
-				<Image src="/icon.webp" alt="Logo" width="34" height="34" className='w-auto h-auto dark:invert' />
-				<p className='font-quicksand font-medium ml-4 hover:text-mygreen transition-all ease-in-out dark:text-white dark:hover:text-lightg'>alvarez.portfolio&#40;&#41;</p>
-			</div>
+			<Link href="/">
+				<div className='flex items-center w-fit cursor-pointer'>
+					<Image src="/icon.webp" alt="Logo" width="34" height="34" className='w-auto h-auto dark:invert' />
+					<p className='font-quicksand font-medium ml-4 hover:text-mygreen transition-all ease-in-out dark:text-white dark:hover:text-lightg'>alvarez.portfolio&#40;&#41;</p>
+				</div>
+			</Link>
+
 
 			<div>
 				<HiOutlineBars3BottomRight className='lg:hidden text-3xl dark:text-white' onClick={() => { setNav(true) }} />
@@ -67,7 +70,7 @@ const Nav: FunctionComponent<myProp> = (props) => {
 
 
 			<AnimatePresence>
-				{navActive ? <SideNav close={handleClose} onClick={onClick} active={active}/> : null}
+				{navActive ? <SideNav close={handleClose} onClick={onClick} active={active} /> : null}
 			</AnimatePresence>
 
 		</div>
