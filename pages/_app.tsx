@@ -89,9 +89,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<div className={`${mode} ${scroll ? 'overflow-auto h-auto': 'overflow-hidden h-screen'}`}>
-			<div style={mode === 'dark' ? { background: "black" } : {}}>
+			<div className="smooth"  style={mode === 'dark' ? { background: "black" } : {}}>
 				<AnimatePresence mode="wait">
-					<motion.div className="overflow-x-hidden w-full h-auto bg-topog dark:bg-black min-h-[100vh]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
+					<motion.div className="overflow-x-hidden w-full h-auto bg-topog dark:bg-black min-h-[100vh] smooth" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} key={router.route}>
 
 						{validPage.includes(router.route) ? navSoc : null}
 

@@ -4,16 +4,17 @@ import { RiSendPlaneFill } from 'react-icons/ri'
 
 interface myProp {
     className?: string,
-    text: string,
+    text: React.ReactNode,
+    debounce: boolean,
     onClick?: () => void
+    done: boolean
 }
 
 const SendButton: FunctionComponent<myProp> = (props) => {
-    const { className, onClick, text } = props
+    const { className, onClick, text, debounce, done} = props
     return (
-        <div className={`w-fit px-6 font-courier py-3 rounded font-medium cursor-pointer hover:opacity-100 transition-all ease-in-out clip-path-forButton flex items-center ${className}`} onClick={onClick}>
+        <div className={`px-6 font-courier py-3 rounded font-medium cursor-pointer hover:opacity-100 transition-all ease-in-out clip-path-forButton flex items-center duration-300 ${className}`} onClick={onClick} style={done ? {width: "100%", opacity: "100", pointerEvents: "none"} : {}}>
             {text}
-            <RiSendPlaneFill className='ml-2'/>
         </div>
     );
 }

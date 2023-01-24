@@ -12,6 +12,10 @@
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
+.smooth {
+    @apply transition-colors duration-500;
+}
+
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
     width: 10px;
