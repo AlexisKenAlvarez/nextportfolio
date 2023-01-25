@@ -45,6 +45,12 @@ const Terminal = () => {
                     setTimeout(() => {
                         setFetching(false)
                         setComponents(current => [...current, <About value={value} key={components.length} />])
+
+                        setTimeout(() => {
+                            ref.current?.scrollIntoView()
+            
+                        }, 100);
+                        
                     }, 1250);
                     
                 } else if (value === '/stacks') {
@@ -52,6 +58,12 @@ const Terminal = () => {
                     setTimeout(() => {
                         setFetching(false)
                         setComponents(current => [...current, <Stack value={value} key={components.length} />])
+
+                        setTimeout(() => {
+                            ref.current?.scrollIntoView()
+            
+                        }, 100);
+
                     }, 1250);
                 } else if (value === '/exit') {
                     router.push('/')
@@ -64,7 +76,7 @@ const Terminal = () => {
             setTimeout(() => {
                 ref.current?.scrollIntoView()
 
-            }, 1260);
+            }, 100);
         } else if (e.ctrlKey && e.key === 'a') {
             setHighlight(true)
         } else {
