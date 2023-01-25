@@ -7,13 +7,14 @@ import Error from '../components/Terminal/Error';
 
 
 const Terminal = () => {
-    const [value, setValue] = useState('')
     const ref = useRef<HTMLInputElement>(null)
+
+    const [value, setValue] = useState('')
     const [focused, setFocused] = useState(false)
     const [highlight, setHighlight] = useState(false)
 
     const [components, setComponents] = useState<JSX.Element[]>([])
-    const commands = ['/help']
+    const commands = ['/help', '/projects', '/stacks', '/about', '/clr', '/exit']
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
@@ -29,11 +30,19 @@ const Terminal = () => {
             if (commands.includes(value)) {
                 if (value === '/help') {
                     console.log("THIS IS HELP, A VALID COMMAND")
+                } else if (value === '/clr') {
+                    setComponents([])
+                    setValue('')
                 }
             } else {
                 setComponents(current => [...current, <Error value={value} />])
                 setValue('')
             }
+
+            setTimeout(() => {
+                ref.current?.scrollIntoView()
+
+            }, 100);
         } else if (e.ctrlKey && e.key === 'a') {
             setHighlight(true)
         } else {
@@ -41,21 +50,13 @@ const Terminal = () => {
         }
     }
 
-    var selection = typeof window !== 'undefined' ? window.getSelection() : null
-    
     const handleFocus = () => {
         setHighlight(false)
         ref.current!.focus()
     }
 
-    useEffect(() => {
-        console.log(window.getSelection()!.anchorNode);
-    }, [selection])
-
-    
-
     return (
-        <div className="w-full h-screen bg-black overflow-hidden" onClick={handleFocus}>
+        <div className="w-full h-screen bg-black overflow-x-hidden" onClick={handleFocus}>
             <div className='absolute bg-transparent w-full h-full top-0 left-0 z-0'></div>
 
             <div className="w-full h-10 bg-white flex items-center text-black fixed z-10">
@@ -80,16 +81,19 @@ const Terminal = () => {
                     <p>Enter &apos;&#47;help&apos; to view the list of commands.</p>
                 </div>
 
-                {components && components.map((items, i) => {
-                    return (
-                        <div key={i}>
-                            {items}
-                        </div>
-                    )
-                })}
+                <ul>
+                    {components && components.map((items, i) => {
+                        return (
+                            <li key={i}>
+                                {items}
+                            </li>
+                        )
+                    })}
+                </ul>
 
-                <div className='flex w-full mt-5'>
-                    <input type="text" name="input" className='bg-transparent outline-none caret-transparent resize-none w-full overflow-hidden absolute top-[-5rem] left-0 opacity-0 select-none z-0 peer' value={value} onChange={handleChange} autoFocus onBlur={() => { setFocused(false) }} onFocus={() => { setFocused(true) }} ref={ref} autoComplete="off" onKeyDown={handleEnter}></input>
+
+                <div className='flex w-full mt-5 relative overflow-hidden'>
+                    <input type="text" name="input" className='bg-transparent outline-none caret-transparent resize-none w-fit overflow-hidden absolute opacity-0 select-none z-0 peer left-[-20rem]' value={value} onChange={handleChange} autoFocus onBlur={() => { setFocused(false) }} onFocus={() => { setFocused(true) }} ref={ref} autoComplete="off" onKeyDown={handleEnter}></input>
 
                     <p className='break-words w-auto overflow-hidden selection:bg-white selection:text-black peer-selection:text-red-100'>Z:\Users\&#62;<span className={`${highlight ? 'bg-white text-black selection:bg-transparent' : ''}`}>{value}</span><motion.span initial={{ opacity: 0 }} animate={{ opacity: [0, 100] }} transition={{
                         repeat: Infinity,
