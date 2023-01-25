@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Error from '../components/Terminal/Error';
 import Help from '../components/Terminal/Help';
+import About from '../components/Terminal/About';
+import Stack from '../components/Terminal/Stack';
 
 const Terminal = () => {
     const ref = useRef<HTMLInputElement>(null)
@@ -35,7 +37,13 @@ const Terminal = () => {
                 } else if (value === '/clr') {
                     setComponents([])
                     setValue('')
-                } 
+                } else if (value === '/about') {
+                    setComponents(current => [...current, <About value={value} key={components.length} />])
+                    setValue('')
+                } else if (value === '/stacks') {
+                    setComponents(current => [...current, <Stack value={value} key={components.length} />])
+
+                }
             } else {
                 setComponents(current => [...current, <Error value={value} key={components.length} />])
                 setValue('')
@@ -92,8 +100,6 @@ const Terminal = () => {
                         )
                     })}
                 </ul>
-
-
 
                 <div className='flex w-full mt-5 relative overflow-hidden'>
                     <input type="text" name="input" className='bg-transparent outline-none caret-transparent resize-none w-fit overflow-hidden absolute opacity-0 select-none z-0 peer left-[-20rem]' value={value} onChange={handleChange} autoFocus onBlur={() => { setFocused(false) }} onFocus={() => { setFocused(true) }} ref={ref} autoComplete="off" onKeyDown={handleEnter}></input>

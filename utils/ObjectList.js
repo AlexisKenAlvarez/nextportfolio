@@ -1,6 +1,11 @@
 import Image from 'next/image';
-import { AiOutlineGithub, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillFacebook } from 'react-icons/ai'
-
+import { AiOutlineGithub, AiFillInstagram, AiFillLinkedin, AiFillMail, AiFillFacebook, AiFillHtml5 } from 'react-icons/ai'
+import { TbBrandNextjs, TbBrandTailwind } from 'react-icons/tb'
+import { RiReactjsFill } from 'react-icons/ri'
+import { SiMongodb, SiPrisma, SiTypescript, SiJavascript, SiFirebase, SiPython, SiGit, SiMysql, SiJava } from  'react-icons/si'
+import { DiCss3, DiSass } from  'react-icons/di'
+import { CgFigma } from 'react-icons/cg'
+import { FaNodeJs } from 'react-icons/fa'
 
 export const current = [
     {
@@ -29,7 +34,6 @@ export const current = [
         image: <Image alt="prisma" width="100" height="100" src="/current/prisma.webp" className='mb-[-1rem] dark:greyscale dark:invert'/>
     } 
 ]
-
 export const soc = [
     <a href="https://github.com/AlexisKenAlvarez" target="_blank" rel="noopener noreferrer" key="1">
         <AiOutlineGithub />
@@ -47,7 +51,6 @@ export const soc = [
         <AiFillFacebook />
     </a>,
 ]
-
 export const sideItems = [
     {
         label: "home",
@@ -63,8 +66,6 @@ export const sideItems = [
     },
 
 ]
-
-
 export const other = [
     {
         id: 1,
@@ -128,7 +129,6 @@ export const other = [
     },
     
 ]
-
 export const info1 = [
     {
         id: '1',
@@ -156,7 +156,6 @@ export const info1 = [
         value: 'Tagalog, English'
     },
 ]
-
 export const info2 = [
     {
         id: '1',
@@ -179,7 +178,6 @@ export const info2 = [
         value: 'Study programming, Gaming, Cycling, Chess',
     },
 ]
-
 export const projectList = [
     {
         num: '01',
@@ -200,7 +198,6 @@ export const projectList = [
         img: 'OldPortfolio.webp'
     },
 ]
-
 export const commands = [
     {
         command: '/about',
@@ -221,6 +218,135 @@ export const commands = [
     {
         command: '/exit',
         desc: 'Exit the terminal.'
+    },
+    
+]
+export const aboutTerminal = [
+    {
+        label: 'Fullname',
+        value: 'Alexis Ken R. Alvarez'
+    },
+    {
+        label: 'Address',
+        value: 'Alfonso Cavite'
+    },
+    {
+        label: 'Nationality',
+        value: 'Filipino'
+    },
+    {
+        label: 'Country',
+        value: 'Philippines'
+    },
+    {
+        label: 'Language',
+        value: 'Tagalog, English'
+    },
+    {
+        label: 'Primary and Secondary',
+        value: 'Saint Joseph Parochial School of Cavite'
+    },
+    {
+        label: 'Tertiary',
+        value: 'Cavite State University'
+    },
+    {
+        label: 'Course',
+        value: 'BS Computer Science'
+    },
+    {
+        label: 'Hobbies',
+        value: 'Coding, Gaming, Cycling, Chess'
+    },
+    
+]
+export const currStackTerminal = [
+    {
+        image: <TbBrandNextjs/>,
+        label: 'NextJS',
+        link: 'https://nextjs.org/'
+    },
+    {
+        image: <RiReactjsFill/>,
+        label: 'ReactJS',
+        link: 'https://reactjs.org/'
+    },
+    {
+        image: <TbBrandTailwind/>,
+        label: 'TailwindCSS',
+        link: 'https://tailwindcss.com/'
+    },
+    {
+        image: <SiMongodb/>,
+        label: 'MongoDB',
+        link: 'https://mongodb.com/'
+    },
+    {
+        image: <SiPrisma/>,
+        label: 'Prisma',
+        link: 'https://www.prisma.io/'
+    },
+]
+export const otherSkillsTerminal = [
+    {
+        image: <AiFillHtml5/>,
+        label: 'HTML',
+        link: 'https://www.w3schools.com/html/'
+    },
+    {
+        image: <DiCss3/>,
+        label: 'CSS',
+        link: 'https://www.w3schools.com/css/'
+    },
+    {
+        image: <SiJavascript/>,
+        label: 'Javascript',
+        link: 'https://www.w3schools.com/js/'
+    },
+    {
+        image: <SiTypescript/>,
+        label: 'Typescript',
+        link: 'https://www.typescriptlang.org/'
+    },
+    {
+        image: <DiSass/>,
+        label: 'Sass',
+        link: 'https://sass-lang.com/'
+    },
+    {
+        image: <SiFirebase/>,
+        label: 'Firebase',
+        link: 'https://firebase.google.com/'
+    },
+    {
+        image: <CgFigma/>,
+        label: 'Figma',
+        link: 'https://www.figma.com/'
+    },
+    {
+        image: <SiPython/>,
+        label: 'Python',
+        link: 'https://www.python.org/'
+    },
+    {
+        image: <SiGit/>,
+        label: 'Git',
+        link: 'https://git-scm.com/'
+    },
+    {
+        image: <SiMysql/>,
+        label: 'MySQL',
+        link: 'https://www.mysql.com/'
+    },
+    {
+        image: <FaNodeJs/>,
+        label: 'NodeJS',
+        link: 'https://nodejs.org/en/'
+    },
+    {
+        image: <SiJava/>,
+        label: 'Java',
+        link: 'https://www.java.com/en/'
     },
     
 ]
