@@ -64,7 +64,7 @@ const Terminal = () => {
             setTimeout(() => {
                 ref.current?.scrollIntoView()
 
-            }, 100);
+            }, 1260);
         } else if (e.ctrlKey && e.key === 'a') {
             setHighlight(true)
         } else {
