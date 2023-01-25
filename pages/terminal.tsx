@@ -1,14 +1,18 @@
 import { FcCommandLine } from 'react-icons/fc'
 import { IoCloseOutline } from 'react-icons/io5'
 import { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import Link from 'next/link';
 import Error from '../components/Terminal/Error';
 import Help from '../components/Terminal/Help';
 import About from '../components/Terminal/About';
 import Stack from '../components/Terminal/Stack';
+import { useRouter } from 'next/router';
+import Fetching from '../components/Terminal/Fetching';
 
 const Terminal = () => {
+    const router = useRouter()
+    const [fetching, setFetching] = useState(false)
     const ref = useRef<HTMLInputElement>(null)
 
     const [value, setValue] = useState('')
@@ -30,19 +34,27 @@ const Terminal = () => {
     const handleEnter = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {
             if (commands.includes(value)) {
+                setValue('')
+
                 if (value === '/help') {
                     setComponents(current => [...current, <Help value={value} key={components.length} />])
-                    setValue('')
-
                 } else if (value === '/clr') {
                     setComponents([])
-                    setValue('')
                 } else if (value === '/about') {
-                    setComponents(current => [...current, <About value={value} key={components.length} />])
-                    setValue('')
+                    setFetching(true)
+                    setTimeout(() => {
+                        setFetching(false)
+                        setComponents(current => [...current, <About value={value} key={components.length} />])
+                    }, 1250);
+                    
                 } else if (value === '/stacks') {
-                    setComponents(current => [...current, <Stack value={value} key={components.length} />])
-
+                    setFetching(true)
+                    setTimeout(() => {
+                        setFetching(false)
+                        setComponents(current => [...current, <Stack value={value} key={components.length} />])
+                    }, 1250);
+                } else if (value === '/exit') {
+                    router.push('/')
                 }
             } else {
                 setComponents(current => [...current, <Error value={value} key={components.length} />])
@@ -64,6 +76,8 @@ const Terminal = () => {
         setHighlight(false)
         ref.current!.focus()
     }
+
+    
 
     return (
         <div className="w-full h-screen bg-black overflow-x-hidden" onClick={handleFocus}>
@@ -110,8 +124,10 @@ const Terminal = () => {
                         repeatType: "mirror",
                         ease: [0, 1.13, 0, 1]
                     }} className='font-black' style={focused ? { display: "0%" } : { opacity: "100%" }}>_</motion.span></p>
-                </div>
 
+                </div>
+                {fetching ? <Fetching/> : null}
+                
             </div>
         </div>
     );
