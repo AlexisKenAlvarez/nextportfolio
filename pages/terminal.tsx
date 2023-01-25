@@ -90,7 +90,7 @@ const Terminal = () => {
 
                 </div>
                 
-                <div className='w-fit h-full hover:bg-[#e81123] ml-auto transition-all ease-in-out duration-300 flex items-center justify-center px-4 hover:text-white cursor-pointer'>
+                <div className='w-fit h-full hover:bg-[#e81123] ml-auto transition-all ease-in-out duration-300 flex items-center justify-center px-4 hover:text-white cursor-pointer' onClick={() => {router.push("/")}}>
                     <IoCloseOutline className=' text-2xl' />
                 </div>
 
