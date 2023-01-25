@@ -35,7 +35,7 @@ const Terminal = () => {
                     setValue('')
                 }
             } else {
-                setComponents(current => [...current, <Error value={value} />])
+                // setComponents(current => [...current, <Error value={value} />])
                 setValue('')
             }
 
@@ -82,13 +82,13 @@ const Terminal = () => {
                 </div>
 
                 <ul>
-                    {/* {components && components.map((items, i) => {
+                    {components && components.map((items, i) => {
                         return (
                             <li key={i}>
                                 {items}
                             </li>
                         )
-                    })} */}
+                    })}
                 </ul>
 
 
@@ -102,10 +102,6 @@ const Terminal = () => {
                         ease: [0, 1.13, 0, 1]
                     }} className='font-black' style={focused ? { display: "0%" } : { opacity: "100%" }}>_</motion.span></p>
                 </div>
-
-
-
-
 
             </div>
         </div>
