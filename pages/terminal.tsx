@@ -82,13 +82,13 @@ const Terminal = () => {
                 </div>
 
                 <ul>
-                    {components && components.map((items, i) => {
+                    {/* {components && components.map((items, i) => {
                         return (
                             <li key={i}>
                                 {items}
                             </li>
                         )
-                    })}
+                    })} */}
                 </ul>
 
 
