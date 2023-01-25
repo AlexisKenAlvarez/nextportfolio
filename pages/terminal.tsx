@@ -35,7 +35,7 @@ const Terminal = () => {
                     setValue('')
                 }
             } else {
-                // setComponents(current => [...current, <Error value={value} />])
+                setComponents(current => [...current, <Error value={value} />])
                 setValue('')
             }
 
