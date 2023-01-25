@@ -1,4 +1,4 @@
-import { FcCommandLine } from 'react-icons/Fc'
+import { FcCommandLine } from 'react-icons/fc'
 import { IoCloseOutline } from 'react-icons/io5'
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion';
