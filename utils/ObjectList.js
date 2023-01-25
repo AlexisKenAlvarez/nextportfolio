@@ -200,3 +200,27 @@ export const projectList = [
         img: 'OldPortfolio.webp'
     },
 ]
+
+export const commands = [
+    {
+        command: '/about',
+        desc: 'View all the details that you need to know about me.'
+    },
+    {
+        command: '/stacks',
+        desc: 'View my current stack and other stacks that I worked on.'
+    },
+    {
+        command: '/projects',
+        desc: 'View some of my projects.'
+    },
+    {
+        command: '/clr',
+        desc: 'Clear the terminal.'
+    },
+    {
+        command: '/exit',
+        desc: 'Exit the terminal.'
+    },
+    
+]

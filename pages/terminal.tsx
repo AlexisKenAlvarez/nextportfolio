@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Error from '../components/Terminal/Error';
-
+import Help from '../components/Terminal/Help';
 
 const Terminal = () => {
     const ref = useRef<HTMLInputElement>(null)
@@ -29,13 +29,15 @@ const Terminal = () => {
         if (e.key === 'Enter') {
             if (commands.includes(value)) {
                 if (value === '/help') {
-                    console.log("THIS IS HELP, A VALID COMMAND")
+                    setComponents(current => [...current, <Help value={value} key={components.length} />])
+                    setValue('')
+
                 } else if (value === '/clr') {
                     setComponents([])
                     setValue('')
-                }
+                } 
             } else {
-                setComponents(current => [...current, <Error value={value} key={components.length}/>])
+                setComponents(current => [...current, <Error value={value} key={components.length} />])
                 setValue('')
             }
 
@@ -90,6 +92,7 @@ const Terminal = () => {
                         )
                     })}
                 </ul>
+
 
 
                 <div className='flex w-full mt-5 relative overflow-hidden'>
