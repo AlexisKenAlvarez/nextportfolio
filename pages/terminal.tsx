@@ -77,7 +77,7 @@ const Terminal = () => {
                     <p>Alvarez Terminal &#91;Version 1.0.0&#93; <br />&#40;c&#41; Eyed Owl Corporation. All rights reserved.</p>
 
                     <p className='mt-5'>Visit the website <Link href="https:&#47;&#47;alexisalvarez.info&#47;" className='hover:underline'>https://alexisalvarez.info/</Link></p>
-                    <p>Enter '&#47;help' to view the list of commands.</p>
+                    <p>Enter &apos;&#47;help&apos; to view the list of commands.</p>
                 </div>
 
                 {components && components.map((items, i) => {

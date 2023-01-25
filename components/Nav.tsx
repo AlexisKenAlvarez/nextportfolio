@@ -62,9 +62,13 @@ const Nav: FunctionComponent<myProp> = (props) => {
 
 						)
 					})}
-					<div className='  px-5 py-2 select-none w-fit bg-black opacity-70 text-white font-courier  rounded font-medium cursor-pointer hover:text-lightg hover:opacity-100 transition-all ease-in-out'>
-						terminal_
-					</div>
+					<Link href="/terminal">
+						<div className='  px-5 py-2 select-none w-fit bg-black opacity-70 text-white font-courier  rounded font-medium cursor-pointer hover:text-lightg hover:opacity-100 transition-all ease-in-out'>
+							terminal_
+						</div>
+					</Link>
+
+
 				</ul>
 			</div>
 
