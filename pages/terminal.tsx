@@ -46,7 +46,7 @@ const Terminal = () => {
                         setFetching(false)
                         setComponents(current => [...current, <About value={value} key={components.length} />])
                     }, 1250);
-                    
+
                 } else if (value === '/stacks') {
                     setFetching(true)
                     setTimeout(() => {
@@ -77,7 +77,7 @@ const Terminal = () => {
         ref.current!.focus()
     }
 
-    
+
 
     return (
         <div className="w-full h-screen bg-black overflow-x-hidden" onClick={handleFocus}>
@@ -90,9 +90,12 @@ const Terminal = () => {
 
                 </div>
 
-                <div className='w-fit h-full hover:bg-[#e81123] ml-auto transition-all ease-in-out duration-300 flex items-center justify-center px-4 hover:text-white cursor-pointer'>
-                    <IoCloseOutline className=' text-2xl' />
-                </div>
+                <Link href="/">
+                    <div className='w-fit h-full hover:bg-[#e81123] ml-auto transition-all ease-in-out duration-300 flex items-center justify-center px-4 hover:text-white cursor-pointer'>
+                        <IoCloseOutline className=' text-2xl' />
+                    </div>
+                </Link>
+
 
             </div>
 
@@ -126,8 +129,8 @@ const Terminal = () => {
                     }} className='font-black' style={focused ? { display: "0%" } : { opacity: "100%" }}>_</motion.span></p>
 
                 </div>
-                {fetching ? <Fetching/> : null}
-                
+                {fetching ? <Fetching /> : null}
+
             </div>
         </div>
     );
