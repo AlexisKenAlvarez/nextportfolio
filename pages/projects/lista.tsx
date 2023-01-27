@@ -5,9 +5,13 @@ import PagesTemplate from '../../components/Templates/PagesTemplate';
 import { listaImage } from '../../utils/ImageList'
 import Footer from '../../components/Footer/Footer';
 
-const Lista = () => {
+import Link from 'next/link';
 
+const Lista = () => {
     const contrib = ['UI/UX Design', 'Front-end development', 'Back-end development']
+    const link = 'https://github.com/AlexisKenAlvarez/Lista'
+    const project = 'https://lista-ph.netlify.app/'
+
 
     return (
         <section className="w-full h-auto">
@@ -38,15 +42,18 @@ const Lista = () => {
                         <p className="text-sm max-w-[26.6rem] text-grey md:leading-8 2xl:text-lg 2xl:max-w-[38rem] 2xl:mt-6 2xl:leading-9">We had a lot of activities going on at the time I had this idea, so instead of looking for a to-do list app or assignment tracker on Google, I built my own web app. Website link sometimes <b>does not work</b> because of Railway's <b>free tier monthly usage limits.</b></p>
 
                         <div className='text-grey flex items-center w-[11rem] mt-10 h-[2.5rem] select-non overflow-hidden relative'>
-                            <div className='cursor-pointer relative w-[8rem] h-full flex items-center hover:w-full bg-white hover:z-10 z-0 transition-all ease-in-out duration-500 hover:bg-black border-t-[1px] border-l-[1px] border-b-[1px] border-grey rounded-tl-md rounded-bl-md hover:rounded-tr-md hover:rounded-br-md hover:text-lightg group'>
+                            <Link href={project} rel="noreferrer" target="_blank" className='cursor-pointer relative w-[8rem] h-full flex items-center hover:w-full bg-white hover:z-10 z-0 transition-all ease-in-out duration-500 hover:bg-black border-t-[1px] border-l-[1px] border-b-[1px] border-grey rounded-tl-md rounded-bl-md hover:rounded-tr-md hover:rounded-br-md hover:text-lightg group'>
 
                                 <p className='text-sm ml-[1.3rem] group-hover:translate-x-2 transition-transform duration-500'>Visit website</p>
                                 <CgArrowLongRight className="absolute left-[5.5rem] text-2xl group-hover:translate-x-10 transition-all ease-in-out duration-500 opacity-0 group-hover:opacity-100 text-lightg" />
-                            </div>
-                            <div className='border-[1px] rounded-tr-md rounded-br-md border-grey h-full flex items-center cursor-pointer absolute right-0 bg-white z-0 hover:bg-black hover:text-lightg transition-all duration-500 w-[3rem] hover:w-full hover:rounded-tl-md hover:rounded-bl-md group'>
+                            </Link>
+
+                            <Link href={link}  rel="noreferrer" target="_blank" className="border-[1px] rounded-tr-md rounded-br-md border-grey h-full flex items-center cursor-pointer absolute right-0 bg-white z-0 hover:bg-black hover:text-lightg transition-all duration-500 w-[3rem] hover:w-full hover:rounded-tl-md hover:rounded-bl-md group">
                                 <p className='text-sm transition-all group-hover:ml-7 duration-500 absolute w-[6rem] opacity-0 translate-x-[-5rem] group-hover:translate-x-0 group-hover:opacity-100 text-lightg z-0 pointer-events-none'>Source code</p>
                                 <AiFillGithub className='text-2xl ml-auto mr-[0.7rem] group-hover:translate-x-[-0.7rem] transition-transform duration-500 z-10' />
-                            </div>
+                            </Link>
+
+
                         </div>
                     </div>
 
@@ -58,10 +65,10 @@ const Lista = () => {
                     <div className='w-full h-auto mt-[-7rem]'>
                         {listaImage.map((items) => {
                             return (
-                                <PagesTemplate image={items.image} alt={items.alt} key={items.alt}/>
+                                <PagesTemplate image={items.image} alt={items.alt} key={items.alt} />
                             )
                         })}
-                        
+
                     </div>
 
                 </div>
@@ -80,7 +87,7 @@ const Lista = () => {
             <div className='w-full h-auto bg-projgrey relative top-0 pb-20'>
                 <Image src="/Projects/lista/last.webp" alt="Last" width="1000" height="1000" className="object-contain mx-auto"></Image>
             </div>
-            <Footer/>
+            <Footer />
         </section>
     );
 }
