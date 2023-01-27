@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Proj from "../../components/Projects"
+import Proj from "../../components/Projects/Projects"
 import Head from 'next/head';
 
 const Projects: NextPage = () => {

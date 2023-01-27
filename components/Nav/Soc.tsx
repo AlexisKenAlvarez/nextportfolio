@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { FunctionComponent } from "react";
-import { soc } from "../utils/ObjectList";
+import { soc } from "../../utils/ObjectList";
 
 
 const Soc: FunctionComponent = (props) => {

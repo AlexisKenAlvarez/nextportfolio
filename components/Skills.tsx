@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react'
 import { current, other } from '../utils/ObjectList';
 import { motion, } from "framer-motion"
 import { useInView } from "react-intersection-observer";
-import SkillsTemplate from './Modes/SkillsTemplate';
+import SkillsTemplate from './Templates/SkillsTemplate';
 
 
 const Skills: FunctionComponent = () => {

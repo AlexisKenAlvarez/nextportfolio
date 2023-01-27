@@ -2,10 +2,10 @@ import { FunctionComponent } from "react";
 import Image from 'next/image';
 import { RiCloseFill } from "react-icons/ri"
 import { AnimatePresence, motion } from 'framer-motion'
-import Moon from "./Modes/Moon";
-import Sun from "./Modes/Sun";
+import Moon from "../Modes/Moon";
+import Sun from "../Modes/Sun";
 import Link from 'next/link';
-import { sideItems } from "../utils/ObjectList";
+import { sideItems } from "../../utils/ObjectList";
 
 interface myProp {
     close: () => void,

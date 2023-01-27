@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Box from './Box';
+import Box from './Templates/Box';
 import { FunctionComponent } from 'react'
 
 const BoxGroup: FunctionComponent = () => {

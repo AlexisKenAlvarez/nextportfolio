@@ -1,8 +1,8 @@
 import { FunctionComponent, useState, useRef, useEffect } from 'react'
 import { motion } from "framer-motion"
-import { genRandom } from '../utils/UsefulFunctions'
-import { projectList } from '../utils/ObjectList'
-import ProjectTemplate from './Projects/ProjectTemplate'
+import { genRandom } from '../../utils/UsefulFunctions'
+import { projectList } from '../../utils/ObjectList'
+import ProjectTemplate from '../Templates/ProjectTemplate'
 import { useInView } from "react-intersection-observer";
 
 

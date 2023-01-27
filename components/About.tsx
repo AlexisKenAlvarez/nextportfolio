@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 import { info1, info2 } from '../utils/ObjectList';
-import Projects from './Projects';
+import Projects from './Projects/Projects';
 import Skills from './Skills';
 import { useInView } from "react-intersection-observer";
 import { motion, } from "framer-motion"
