@@ -183,19 +183,23 @@ export const projectList = [
         num: '01',
         title: 'Lista',
         desc: 'Fully responsive assignment tracker with authentication. I used MERN stack for this project.',
-        img: 'Lista.webp'
+        img: 'Lista.webp',
+        link: '/projects/lista'
     },
     {
         num: '02',
         title: 'Unix',
         desc: 'Fully responsive e-commerce website with add to cart system similar to Shopee, made with MERN stack.',
-        img: 'Unix.webp'
+        img: 'Unix.webp',
+        link: '/projects/unix'
     },
     {
         num: '03',
         title: 'Portfolio (Old)',
         desc: 'My first ever portfolio, made with HTML, CSS, JS and GSAP for animations. It features my small projects and skills.',
-        img: 'OldPortfolio.webp'
+        img: 'OldPortfolio.webp',
+        link: '/projects/portfolio'
+
     },
 ]
 export const commands = [

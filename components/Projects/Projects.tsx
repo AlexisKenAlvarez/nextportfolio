@@ -62,7 +62,7 @@ const Projects: FunctionComponent = () => {
             <div className='overflow-hidden'>
                 {projectList.map((items, index) => {
                     return (
-                        <ProjectTemplate key={index} num={items.num} title={items.title} desc={items.desc} img={items.img} innerRef={refArr[index]} view={viewArr[index]} selfRef={selfRefArr[index]} selfView={selfViewArr[index]} />
+                        <ProjectTemplate key={index} num={items.num} title={items.title} desc={items.desc} img={items.img} innerRef={refArr[index]} view={viewArr[index]} selfRef={selfRefArr[index]} selfView={selfViewArr[index]} link={items.link} />
                     )
                 })}
             </div>
