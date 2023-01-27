@@ -39,9 +39,9 @@ const Lista = () => {
 
                     <div className="mt-10 w-auto md:mt-0">
                         <h1 className="font-bold text-4xl text-darkgrey 2xl:text-7xl ">LISTA</h1>
-                        <p className="text-sm max-w-[26.6rem] text-grey md:leading-8 2xl:text-lg 2xl:max-w-[38rem] 2xl:mt-6 2xl:leading-9">We had a lot of activities going on at the time I had this idea, so instead of looking for a to-do list app or assignment tracker on Google, I built my own web app. Website link sometimes <b>does not work</b> because of Railway's <b>free tier monthly usage limits.</b></p>
+                        <p className="text-sm max-w-[26.6rem] text-grey md:leading-8 2xl:text-lg 2xl:max-w-[38rem] 2xl:mt-6 2xl:leading-9">We had a lot of activities going on at the time I had this idea, so instead of looking for a to-do list app or assignment tracker on Google, I built my own web app. Website link sometimes <b>does not work</b> because of Railway&apos;s <b>free tier monthly usage limits.</b></p>
 
-                        <div className='text-grey flex items-center w-[11rem] mt-10 h-[2.5rem] select-non overflow-hidden relative'>
+                        <div className='text-grey flex items-center w-[11rem] mt-10 h-[2.5rem] select-non overflow-hidden relative mb-14'>
                             <Link href={project} rel="noreferrer" target="_blank" className='cursor-pointer relative w-[8rem] h-full flex items-center hover:w-full bg-white hover:z-10 z-0 transition-all ease-in-out duration-500 hover:bg-black border-t-[1px] border-l-[1px] border-b-[1px] border-grey rounded-tl-md rounded-bl-md hover:rounded-tr-md hover:rounded-br-md hover:text-lightg group'>
 
                                 <p className='text-sm ml-[1.3rem] group-hover:translate-x-2 transition-transform duration-500'>Visit website</p>
