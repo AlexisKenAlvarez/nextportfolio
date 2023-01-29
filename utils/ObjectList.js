@@ -181,26 +181,27 @@ export const info2 = [
 export const projectList = [
     {
         num: '01',
+        title: 'Tigershop',
+        desc: 'Our baby thesis for COSC 75. A merchandise shop for CEIT Department and organizations under it.',
+        img: 'Tigershop.webp',
+        link: '/projects/tigershop'
+
+    },
+    {
+        num: '02',
         title: 'Lista',
         desc: 'Fully responsive assignment tracker with authentication. I used MERN stack for this project.',
         img: 'Lista.webp',
         link: '/projects/lista'
     },
     {
-        num: '02',
+        num: '03',
         title: 'Unix',
         desc: 'Fully responsive e-commerce website with add to cart system similar to Shopee, made with MERN stack.',
         img: 'Unix.webp',
         link: '/projects/unix'
     },
-    {
-        num: '03',
-        title: 'Portfolio (Old)',
-        desc: 'My first ever portfolio, made with HTML, CSS, JS and GSAP for animations. It features my small projects and skills.',
-        img: 'OldPortfolio.webp',
-        link: '/projects/portfolio'
 
-    },
 ]
 export const commands = [
     {

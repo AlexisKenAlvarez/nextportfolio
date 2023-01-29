@@ -50,7 +50,7 @@ const Projects: FunctionComponent = () => {
 
                 <div className="relative overflow-hidden pb-1 w-fit" ref={projTitle}>
                     <motion.div initial={{ opacity: 0 }} animate={projView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} >
-                        <h1 className="font-quicksand text-mygreen font-semibold text-lg lg:text-left dark:text-lightg">Works</h1>
+                        <h1 className="font-quicksand text-mygreen font-semibold text-lg lg:text-left dark:text-lightg">Some of my works</h1>
                         <h1 className='dark:text-white text-5xl font-raleway font-extrabold text-notSoBlack'>PROJECTS</h1>
                     </motion.div>
                     <motion.div className='absolute w-full h-full bg-mygreen dark:bg-lightg top-0' variants={variants} initial="initial" animate={projView ? "animate" : "none"} ></motion.div>

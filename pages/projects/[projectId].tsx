@@ -95,13 +95,14 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 
     return {
-        paths: ['/projects/lista', '/projects/unix', '/projects/portfolio'],
+        paths: ['/projects/lista', '/projects/unix', '/projects/tigershop'],
         fallback: false
     }
 }
 export const getStaticProps: GetStaticProps = async (ctx) => {
 
     const id = ctx.params!.projectId
+    
     return {
         props: {
             project: id === 'lista' ? lista : id === 'unix' ? unix : null
