@@ -181,18 +181,18 @@ export const info2 = [
 export const projectList = [
     {
         num: '01',
+        title: 'Lista',
+        desc: 'Fully responsive assignment tracker with authentication. I used MERN stack for this project.',
+        img: 'Lista.webp',
+        link: '/projects/lista'
+    },
+    {
+        num: '02',
         title: 'Tigershop',
         desc: 'Our baby thesis for COSC 75. A merchandise shop for CEIT Department and organizations under it.',
         img: 'Tigershop.webp',
         link: '/projects/tigershop'
 
-    },
-    {
-        num: '02',
-        title: 'Lista',
-        desc: 'Fully responsive assignment tracker with authentication. I used MERN stack for this project.',
-        img: 'Lista.webp',
-        link: '/projects/lista'
     },
     {
         num: '03',

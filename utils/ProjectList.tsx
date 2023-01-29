@@ -25,6 +25,19 @@ export const unix =
     last: 'unix/last.webp',
 }
 
+export const tigershop =
+{
+    year: '2022',
+    what: ['Front-end development', 'Back-end development'],
+    title: 'Tigershop',
+    desc: 'A merchandise shop for our department. This is a baby thesis for COSC 75. I did all the development while one of my group member handled the UI/UX. Registration is exclusive only to CvSU bonafide students.',
+    website: 'https://tigershop.vercel.app/',
+    source: 'https://github.com/AlexisKenAlvarez/tigershopts',
+    images: ['/tigershop/1.webp', '/tigershop/2.webp', '/tigershop/3.webp', '/tigershop/4.webp', '/tigershop/5.webp','/tigershop/6.webp',],
+    phone: 'tigershop/phone.webp',
+    last: 'tigershop/last.webp',
+}
+
 export interface projectType {
     year: string
     what: string[]

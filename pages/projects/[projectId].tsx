@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import PagesTemplate from '../../components/Templates/PagesTemplate';
 import { CgArrowLongRight } from 'react-icons/cg'
 import { AiFillGithub } from 'react-icons/ai'
-import { lista, projectType, unix } from '../../utils/ProjectList'
+import { lista, projectType, unix, tigershop } from '../../utils/ProjectList'
 import Footer from '../../components/Footer/Footer';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -79,11 +79,11 @@ const ProjectId = ({project}: {project: projectType}) => {
                         <h1 className='font-semibold text-xl text-darkgrey 2xl:text-2xl'>Responsive Mobile Design</h1>
                         <p className='max-w-[23rem] text-md text-grey mt-2 2xl:text-lg 2xl:mt-6 2xl:max-w-[25rem]'>The website&apos;s pages are all mobile-friendly. Majority of users nowadays spend their time on their mobile devices. This will help users to check their tasks anywhere and anytime as long as they have their phone.</p>
                     </div>
-                    <Image src={`/Projects/${project.phone}`} alt="Phone" width="1100" height="1100" unoptimized={true} className="object-contain absolute w-[18rem] 2xl:w-[19.5rem] top-[-4rem] right-0 hidden lg:block mb-0"></Image>
+                    <Image src={`/Projects/${project.phone}`} alt="Phone" width="1100" height="1100" unoptimized={true} className="object-contain absolute w-[18rem] 2xl:w-[19.5rem] bottom-0 right-0 hidden lg:block mb-0"></Image>
                 </div>
             </div>
 
-            <div className='w-full h-auto bg-projgrey relative top-0 pb-20'>
+            <div className='w-full h-auto bg-projgrey relative top-0'>
                 <Image  src={`/Projects/${project.last}`} alt="Last" width="1000" height="1000" className="object-contain mx-auto"></Image>
             </div>
             <Footer />
@@ -105,7 +105,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     
     return {
         props: {
-            project: id === 'lista' ? lista : id === 'unix' ? unix : null
+            project: id === 'lista' ? lista : id === 'unix' ? unix : id === 'tigershop' ? tigershop : null
         }
     }
 }

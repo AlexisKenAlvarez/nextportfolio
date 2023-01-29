@@ -50,7 +50,7 @@ const ProjectTemplate: FunctionComponent<myProp> = (props) => {
     }
 
     return (
-        <div className={`font-raleway px-7 h-[45rem] md:h-[30rem] lg:h-[37rem]`} style={title === "Tigershop" ? { marginTop: "10rem" } : {}}>
+        <div className={`font-raleway px-7 h-[45rem] md:h-[30rem] lg:h-[37rem]`} style={title === "Lista" ? { marginTop: "10rem" } : {}}>
             <div className='mx-auto w-fit flex flex-col md:flex-row md:px-7 h-full'>
                 <div className='md:flex hidden w-5 h-full mr-8 justify-start items-center flex-col relative'>
                     <motion.div initial={{ opacity: 0 }} animate={selfView ? { opacity: 1 } : {}} transition={{ duration: 1, ease: [.21, 1.03, .27, 1] }} className='absolute top-0 circle w-3 h-3 bg-notSoBlack rounded-full dark:bg-white'></motion.div>
