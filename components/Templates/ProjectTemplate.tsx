@@ -62,7 +62,7 @@ const ProjectTemplate: FunctionComponent<myProp> = (props) => {
                     <h1 className='text-4xl font-bold text-darkgrey dark:text-white'>{title}</h1>
                     <h2 className='text-darkgrey w-[22rem] font-medium dark:text-darkwhite mt-2'>{desc}</h2>
                     <div>
-                        <Link href={link} scroll={false}>
+                        <Link href={link} scroll={false} target="_blank" rel="noreferrer">
                             <Primary className="mt-6" text="View project" />
                         </Link>
                         <div ref={selfRef}></div>

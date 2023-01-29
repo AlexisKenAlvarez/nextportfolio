@@ -36,7 +36,7 @@ const ProjectId = ({ project }: { project: projectType }) => {
 		const skew = velocity * 7.5
 
 		if (scrollContainer.current !== null) {
-			scrollContainer.current!.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0)`
+			scrollContainer.current!.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0) skewY(${skew}deg)`
 			requestAnimationFrame(() => skewScrolling())
 
 		} else {

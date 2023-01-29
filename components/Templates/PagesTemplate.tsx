@@ -17,7 +17,7 @@ const PagesTemplate: FunctionComponent<props> = ({ image, alt }) => {
                 </div>
             </div>
 
-            <Image src={image} width="3000" height="3000" alt={alt} unoptimized={true}></Image>
+            <Image src={image} width="3000" height="3000" alt={alt} unoptimized={true} priority></Image>
         </div>
     );
 }
