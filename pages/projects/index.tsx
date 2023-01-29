@@ -93,7 +93,7 @@ const Projects: NextPage = () => {
                         <ul className="font-poppins font-bold md:text-7xl text-white dark:text-myBlack text-5xl text-center flex flex-col gap-y-32 w-fit mx-auto ul">
                             {projList.map((items) => {
                                 return (
-                                    <Link href={`/projects/${items.label}`} scroll={false} key={items.label} target="_blank" rel="noreferrer">
+                                    <Link href={`/projects/${items.label}`} scroll={false} key={items.label}>
                                         <li className="w-fit mx-auto cursor-pointer hover:text-darkgrey transition-all ease-in-out duration-500 dark:hover:text-white ul uppercase">{items.label}</li>
                                     </Link>
                                 )
