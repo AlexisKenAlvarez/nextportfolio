@@ -33,7 +33,8 @@ module.exports = {
         'notSoBlack': '#515151',
         'lightBorder': '#929090',
         'footerBlack': "#0C0C0C",
-        'projgrey': '#F8F8F8'
+        'projgrey': '#F8F8F8',
+        'myBlack': '#111111'
       },
 
       backgroundImage: {

@@ -85,7 +85,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='flex md:justify-between mx-auto w-[80%] absolute lg:bottom-10 left-0 right-0 h-fit bottom-16 flex-col md:flex-row items-center md:items-start'>
+            <div className='flex md:justify-between mx-auto w-[80%] absolute lg:bottom-10 left-0 right-0 h-fit bottom-20 flex-col md:flex-row items-center md:items-start'>
                 <div className='flex items-center w-fit cursor-pointer mb-10 md:mb-0'>
                     <div className="relative overflow-hidden">
                         <motion.div initial={{ opacity: 0 }} animate={logoView ? { opacity: 100 } : {}} transition={{ delay: 0.9 }} className='flex items-center' onClick={scrollToTop}>
