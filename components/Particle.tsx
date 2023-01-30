@@ -32,11 +32,11 @@ const Particle = () => {
                 interactivity: {
                     events: {
                         onClick: {
-                            enable: true,
+                            enable: false,
                             mode: "push",
                         },
                         onHover: {
-                            enable: true,
+                            enable: false,
                             mode: "repulse",
                         },
                         resize: true,
@@ -53,7 +53,14 @@ const Particle = () => {
                 },
                 particles: {
                     color: {
-                        value: mode === 'dark' ? "#5AE676" : "#588F62",
+                        value: mode === 'dark' ? "#111111" : "#ffffff",
+                    },
+                    links: {
+                        color: mode === 'dark' ? "#ffffff" : "#111111",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1,
                     },
                     collisions: {
                         enable: true,
@@ -65,7 +72,7 @@ const Particle = () => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 0.5,
+                        speed: 0.6,
                         straight: false,
                     },
                     number: {
@@ -73,7 +80,7 @@ const Particle = () => {
                             enable: true,
                             area: 800,
                         },
-                        value: 50,
+                        value: 40,
                     },
                     opacity: {
                         value: 0.5,
@@ -82,7 +89,7 @@ const Particle = () => {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 4 },
+                        value: { min: 1, max: 1 },
                     },
                 },
                 detectRetina: true,

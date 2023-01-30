@@ -55,7 +55,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className='w-full md:h-[30rem] h-[25rem] bg-white relative font-raleway overflow-hidden dark:bg-footerBlack'>
+        <footer className='w-full md:h-[30rem] h-[25rem] bg-white relative font-raleway overflow-hidden dark:bg-footerBlack smooth'>
             <div className='flex justify-between mx-auto w-[80%] md:mt-20 mt-10'>
                 <div className='text-notSoBlack dark:text-white md:text-5xl font-extrabold text-3xl text-center w-full md:w-auto md:text-left'>
                     <div className='relative md:pb-2 pb-1 w-fit mx-auto md:mx-0 overflow-hidden'>
@@ -69,7 +69,7 @@ const Footer = () => {
                                 <AnimatePresence>
                                     {hMessage ? <Underline /> : null}
                                 </AnimatePresence>
-                                <div className='bg-white dark:bg-footerBlack w-10 h-full absolute right-[2.35rem] z-[-1] top-5 md:block hidden'></div>
+                                <div className='bg-white dark:bg-footerBlack w-10 h-full absolute right-[2.35rem] z-[-1] top-5 md:block hidden smooth'></div>
                             </span>
                         </motion.h2>
                         <motion.div ref={sendRef} variants={variants} initial="initialLeft" animate={sendView ? "animateLeft" : "none"} className='absolute h-full bg-mygreen dark:bg-lightg top-0 z-10 w-full'></motion.div>
