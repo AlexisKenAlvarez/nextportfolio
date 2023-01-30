@@ -81,7 +81,7 @@ const ProjectId = ({ project }: { project: projectType }) => {
                                 <ul className="text-sm min-w-[11rem] text-grey 2xl:text-lg 2xl:mt-6">
                                     {project.what.map((items, i) => {
                                         return (
-                                            <li key={i} className="mt-3 2xl:mt-4">{items}</li>
+                                            i === 0 ? <li key={i} className="mt-3 2xl:mt-4">{items}</li> : null
                                         )
                                     })}
                                 </ul>
@@ -115,19 +115,19 @@ const ProjectId = ({ project }: { project: projectType }) => {
                     <div className='w-full px-8 flex justify-center md:max-w-[65vw] mx-auto'>
 
                         <div className='w-full h-auto mt-[-7rem]'>
-                            {project.images.map((items) => {
+                            {/* {project.images.map((items) => {
                                 return (
                                     <PagesTemplate image={`/Projects/${items}`} alt={items} key={items} />
                                 )
-                            })}
+                            })} */}
 
                         </div>
 
                     </div>
                 </div>
 
-                <Phone phone={project.phone}/>
-                <Last last={project.last} />
+                {/* <Phone phone={project.phone}/>
+                <Last last={project.last} /> */}
                 <Footer />
             </div>
         </section>
