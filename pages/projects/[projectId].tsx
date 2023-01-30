@@ -14,48 +14,52 @@ import Phone from '../../components/Projects/Phone';
 
 const ProjectId = ({ project }: { project: projectType }) => {
 
-	const app = useRef(null)
-	const scrollContainer = useRef<HTMLDivElement>(null)
-	const size = useWindowSize()
+    const app = useRef(null)
+    const scrollContainer = useRef<HTMLDivElement>(null)
+    const size = useWindowSize()
 
-	const skewConfigs = {
-		ease: .1,
-		current: 0,
-		previous: 0,
-		rounded: 0
-	}
 
-	const skewScrolling = () => {
-		skewConfigs.current = window.scrollY
-		skewConfigs.previous += (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease
-		skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100
+    const skewConfigs = {
+        ease: .1,
+        current: 0,
+        previous: 0,
+        rounded: 0
+    }
 
-		const difference = skewConfigs.current - skewConfigs.rounded
-		const acceleration = difference / size.width
-		const velocity = +acceleration
-		const skew = velocity * 7.5
+    const skewScrolling = () => {
+        skewConfigs.current = window.scrollY
+        skewConfigs.previous += (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease
+        skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100
 
-		if (scrollContainer.current !== null) {
-			scrollContainer.current!.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0) skewY(${skew}deg)`
-			requestAnimationFrame(() => skewScrolling())
+        const difference = skewConfigs.current - skewConfigs.rounded
+        const acceleration = difference / size.width
+        const velocity = +acceleration
+        const skew = velocity * 7.5
 
-		} else {
-			console.log("IS NULL")
-		}
+        if (scrollContainer.current !== null) {
+            scrollContainer.current!.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0) skewY(${skew}deg)`
+            requestAnimationFrame(() => skewScrolling())
 
-	}
+        } else {
+            console.log("IS NULL")
+        }
 
-	useEffect(() => {
-		requestAnimationFrame(() => skewScrolling())
+    }
 
-		return (() => {
-			document.body.style.height = 'auto'
-		})
-	}, [])
+    useEffect(() => {
+        requestAnimationFrame(() => skewScrolling())
 
-	useEffect(() => {
-		document.body.style.height = `${scrollContainer.current!.getBoundingClientRect().height}px`
-	}, [size.height])
+        return (() => {
+            document.body.style.height = 'auto'
+        })
+    }, [])
+
+    useEffect(() => {
+        setTimeout(() => {
+            document.body.style.height = `${scrollContainer.current!.getBoundingClientRect().height}px`
+
+        }, 500);
+    }, [size.height])
 
 
 
@@ -67,7 +71,7 @@ const ProjectId = ({ project }: { project: projectType }) => {
     return (
         <section className='fixed top-0 left-0 w-full h-fit overflow-hidden right-0 mx-auto' ref={app}>
             <div className="w-full h-auto border-b-[1px] border-t-[1px] border-black" ref={scrollContainer}>
-                <div className="w-full min-h-[85vh] h-auto bg-white px-8 flex justify-center pt-32">
+                <div className="w-full min-h-[85vh] h-auto bg-white px-8 flex justify-center pt-32 pb-28">
                     <div className="w-fit h-auto font-poppins md:flex mx-auto md:mt-10 gap-x-[15vw]">
 
                         <div className="grid gap-x-0 grid-cols-headerGrid w-full md:grid-cols-deskH md:w-fit">
@@ -111,22 +115,23 @@ const ProjectId = ({ project }: { project: projectType }) => {
 
                     </div>
                 </div>
+
                 <div className="w-full h-auto bg-projgrey relative top-0 pb-20 lg:pb-40 2xl:pb-60">
                     <div className='w-full px-8 flex justify-center md:max-w-[65vw] mx-auto'>
 
-                        <div className='w-full h-auto mt-[-7rem]'>
-                            {/* {project.images.map((items) => {
+                        <div className='w-full h-auto mt-[-7rem] flex flex-col'>
+                            {project.images.map((items) => {
                                 return (
                                     <PagesTemplate image={`/Projects/${items}`} alt={items} key={items} />
                                 )
-                            })} */}
+                            })}
 
                         </div>
 
                     </div>
                 </div>
 
-                {/* <Phone phone={project.phone}/> */}
+                <Phone phone={project.phone} />
                 <Last last={project.last} />
                 <Footer />
             </div>
