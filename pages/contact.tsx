@@ -172,14 +172,14 @@ const Contact: NextPage = () => {
                         <div className='text-lightBorder lg:ml-2 font-quicksand'>
                             <div className='mt-12 lg:w-[21rem] w-[18rem]'>
                                 <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1, delay: 0.2 }} className='relative'>
-                                    <input name="email" id="email" className='peer w-full bg-transparent border-b-[3px] border-b-lightBorder outline-0 p-2 text-white' autoComplete='off' onChange={handleChangeEmail} value={message['email' as keyof messageProp]} onFocus={() => { onFocusMessage("email") }} onBlur={() => { onBlurMessage('email') }}></input>
+                                    <input name="email" id="email" className='peer w-full bg-transparent border-b-[3px] border-b-lightBorder outline-0 p-2 dark:text-white' autoComplete='off' onChange={handleChangeEmail} value={message['email' as keyof messageProp]} onFocus={() => { onFocusMessage("email") }} onBlur={() => { onBlurMessage('email') }}></input>
                                     <label htmlFor="email" className='absolute bottom-3 left-2 transition-all ease-in-out pointer-events-none peer-focus:text-mygreen peer-focus:font-bold peer-focus:translate-y-[-2.2rem] lg:peer-focus:translate-x-[18rem] peer-focus:translate-x-[14rem] dark:peer-focus:text-lightg' style={show['email'] ? { opacity: "100%" } : { opacity: "0%" }}>Email</label>
                                     <div className='h-1 pointer-events-none absolute bg-transparent bottom-0 border-b-[3px] border-b-lightg left-0 w-0 transition-all ease-in-out peer-hover:w-full duration-[0.7s] peer-focus:w-full'></div>
 
                                 </motion.div>
 
                                 <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1, delay: 0.25 }} className='relative mt-10'>
-                                    <TextareaAutosize className='text-white peer w-full resize-none bg-transparent border-b-[3px] border-b-lightBorder outline-0 p-2' name="message" maxRows={2} id="message" onChange={handleChangeMessage} value={message['message' as keyof messageProp]} onFocus={() => { onFocusMessage('message') }} onBlur={() => { onBlurMessage('message') }} />
+                                    <TextareaAutosize className='dark:text-white peer w-full resize-none bg-transparent border-b-[3px] border-b-lightBorder outline-0 p-2' name="message" maxRows={2} id="message" onChange={handleChangeMessage} value={message['message' as keyof messageProp]} onFocus={() => { onFocusMessage('message') }} onBlur={() => { onBlurMessage('message') }} />
                                     <label htmlFor="message" className='absolute top-1 left-2 transition-all ease-in-out pointer-events-none peer-focus:text-mygreen peer-focus:font-bold peer-focus:translate-y-[-2.4rem] lg:peer-focus:translate-x-[16rem]  peer-focus:translate-x-[13rem] dark:peer-focus:text-lightg' style={show['message'] ? { opacity: 100 } : { opacity: 0 }}>Message</label>
 
                                     <div className='h-1 pointer-events-none absolute bg-transparent bottom-[6px] border-b-[3px] border-b-lightg left-0 w-0 transition-all ease-in-out peer-hover:w-full duration-[0.7s] peer-focus:w-full'></div>
