@@ -102,8 +102,8 @@ export default function App({ Component, pageProps }: AppProps) {
 							{validPage.includes(router.route) ? navSoc : router.route.includes(validPage[0]) ? navSoc : null}
 
 							<AnimatePresence>
-							{exit ? null : <Welcome />}
-						</AnimatePresence>
+								{exit ? null : <Welcome />}
+							</AnimatePresence>
 
 							<motion.div>
 								<Component {...pageProps} />

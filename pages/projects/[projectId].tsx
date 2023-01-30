@@ -58,7 +58,7 @@ const ProjectId = ({ project }: { project: projectType }) => {
         setTimeout(() => {
             document.body.style.height = `${scrollContainer.current!.getBoundingClientRect().height}px`
 
-        }, 500);
+        }, 1000);
     }, [size.height])
 
 
