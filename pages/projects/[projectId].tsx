@@ -126,8 +126,8 @@ const ProjectId = ({ project }: { project: projectType }) => {
                     </div>
                 </div>
 
-                {/* <Phone phone={project.phone}/>
-                <Last last={project.last} /> */}
+                {/* <Phone phone={project.phone}/> */}
+                <Last last={project.last} />
                 <Footer />
             </div>
         </section>
