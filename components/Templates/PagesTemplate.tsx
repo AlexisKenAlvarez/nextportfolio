@@ -21,7 +21,7 @@ const PagesTemplate: FunctionComponent<props> = ({ image, alt }) => {
             </div>
 
 
-            <Image src={image} alt={alt} unoptimized={true} priority sizes="100vw" height="0" width="0" className='w-full h-auto'></Image>
+            <Image src={image} alt={alt} sizes="100vw" height="0" width="0" className='w-full h-auto' unoptimized={true}></Image>
 
 
         </div>

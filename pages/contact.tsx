@@ -103,7 +103,7 @@ const Contact: NextPage = () => {
                 return response.json()
             }).then((r) => {
                 setMessage(value => ({ ...value, email: '' }))
-                setMessage(value => ({ ...value, message: '' }))
+                setMessage(value => ({ ...value, message: '' }))    
 
                 console.log(r);
                 handleDone()
