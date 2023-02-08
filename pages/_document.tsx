@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en" style={{scrollBehavior:'smooth', margin: "0", padding: "0", overflow: "auto"}}>
       <Head />
-      <body>
+      <body className='bg-black'>
         <Main />
         <NextScript />
       </body>

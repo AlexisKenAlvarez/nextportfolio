@@ -22,7 +22,7 @@ const Particle = () => {
     }, []);
 
     const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        await console.log(container);
+        await console.log('');
     }, []);
     return (
         <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded}
