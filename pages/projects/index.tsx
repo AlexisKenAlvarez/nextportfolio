@@ -83,7 +83,7 @@ const Projects: NextPage = () => {
                 <Proj />
             </div> */}
 
-            <div className="min-h-screen h-auto w-full bg-white dark:bg-myBlack top-0 fixed left-0 overflow-hidden" ref={app}>
+            <div className="min-h-screen h-auto w-full bg-white dark:bg-myBlack top-0 fixed left-0 overflow-hidden smooth" ref={app}>
                 <div ref={scrollContainer} className="w-full h-full max-w-[1700px] px-10 mx-auto select-none">
                     <div className="flex w-full h-screen items-center justify-center flex-col">
                         <h1 className="font-poppins font-bold md:text-8xl text-darkgrey text-5xl dark:text-darkwhite">PROJECTS</h1>

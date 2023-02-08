@@ -151,7 +151,7 @@ const Contact: NextPage = () => {
 
     return (
         <>
-            <div className={`w-full h-[100vh] flex items-center absolute top-0 dark:bg-footerBlack bg-[#F5F5F5]`}>
+            <div className={`w-full h-[100vh] flex items-center absolute top-0 dark:bg-footerBlack bg-[#F5F5F5] smooth`}>
                 <Particle />
                 <div className='w-full max-w-[840px] xl:max-w-[950px] h-[33rem] mx-auto relative rounded-2xl flex '>
 {/* 
