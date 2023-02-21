@@ -213,8 +213,16 @@ export const commands = [
         desc: 'View my current stack and other stacks that I worked on.'
     },
     {
+        command: '/contact',
+        desc: 'View all my social media and email'
+    },
+    {
         command: '/projects',
         desc: 'View some of my projects.'
+    },
+    {
+        command: '/help',
+        desc: 'View all valid commands.'
     },
     {
         command: '/clr',

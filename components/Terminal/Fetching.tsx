@@ -11,7 +11,7 @@ const Fetching = () => {
                 width: "40%",
                 transition: {
                     duration: 0.01,
-                    delay: 0.3
+                    delay: 0.15
                 }
             }
         );
@@ -20,7 +20,7 @@ const Fetching = () => {
                 width: "60%",
                 transition: {
                     duration: 0.01,
-                    delay: 0.2
+                    delay: 0.15
                 }
             }
         );
@@ -38,7 +38,7 @@ const Fetching = () => {
                 width: "100%",
                 transition: {
                     duration: 0.01,
-                    delay: 0.3
+                    delay: 0.15
                 }
             }
         );

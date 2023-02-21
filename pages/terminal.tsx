@@ -9,6 +9,7 @@ import About from '../components/Terminal/About';
 import Stack from '../components/Terminal/Stack';
 import { useRouter } from 'next/router';
 import Fetching from '../components/Terminal/Fetching';
+import Projects from '../components/Terminal/Projects'
 
 const Terminal = () => {
     const router = useRouter()
@@ -48,11 +49,11 @@ const Terminal = () => {
 
                         setTimeout(() => {
                             ref.current?.scrollIntoView()
-            
+
                         }, 100);
-                        
-                    }, 1250);
-                    
+
+                    }, 760);
+
                 } else if (value === '/stacks') {
                     setFetching(true)
                     setTimeout(() => {
@@ -61,10 +62,22 @@ const Terminal = () => {
 
                         setTimeout(() => {
                             ref.current?.scrollIntoView()
-            
+
                         }, 100);
 
-                    }, 1250);
+                    }, 760);
+                } else if (value === '/projects') {
+                    setFetching(true)
+                    setTimeout(() => {
+                        setFetching(false)
+                        setComponents(current => [...current, <Projects value={value} key={components.length} />])
+
+                        setTimeout(() => {
+                            ref.current?.scrollIntoView()
+
+                        }, 100);
+
+                    }, 760);
                 } else if (value === '/exit') {
                     router.push('/')
                 }
@@ -89,7 +102,7 @@ const Terminal = () => {
         ref.current!.focus()
     }
 
-    
+
 
     return (
         <div className="w-full h-screen bg-black overflow-x-hidden" onClick={handleFocus}>
@@ -101,8 +114,8 @@ const Terminal = () => {
                     <p className="ml-2" ref={ref}>Command Prompt</p>
 
                 </div>
-                
-                <div className='w-fit h-full hover:bg-[#e81123] ml-auto transition-all ease-in-out duration-300 flex items-center justify-center px-4 hover:text-white cursor-pointer' onClick={() => {router.push("/")}}>
+
+                <div className='w-fit h-full hover:bg-[#e81123] ml-auto transition-all ease-in-out duration-300 flex items-center justify-center px-4 hover:text-white cursor-pointer' onClick={() => { router.push("/") }}>
                     <IoCloseOutline className=' text-2xl' />
                 </div>
 
@@ -138,8 +151,8 @@ const Terminal = () => {
                     }} className='font-black' style={focused ? { display: "0%" } : { opacity: "100%" }}>_</motion.span></p>
 
                 </div>
-                {fetching ? <Fetching/> : null}
-                
+                {fetching ? <Fetching /> : null}
+
             </div>
         </div>
     );
