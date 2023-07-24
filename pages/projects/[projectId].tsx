@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import PagesTemplate from '../../components/Templates/PagesTemplate';
-import { lista, projectType, unix, tigershop } from '../../utils/ProjectList'
+import { lista, projectType, tigershop, lucidia } from '../../utils/ProjectList'
 import Footer from '../../components/Footer/Footer';
 import useWindowSize from '../../hooks/useWindowSize';
 import { useRef, useEffect, useState } from 'react'
@@ -137,7 +137,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 
     return {
-        paths: ['/projects/lista', '/projects/unix', '/projects/tigershop'],
+        paths: ['/projects/lista', '/projects/lucidia', '/projects/tigershop'],
         fallback: false
     }
 }
@@ -147,7 +147,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
     return {
         props: {
-            project: id === 'lista' ? lista : id === 'unix' ? unix : id === 'tigershop' ? tigershop : null
+            project: id === 'lista' ? lista : id === 'lucidia' ? lucidia : id === 'tigershop' ? tigershop : null
         }
     }
 }

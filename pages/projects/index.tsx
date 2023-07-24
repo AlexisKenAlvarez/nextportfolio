@@ -65,7 +65,7 @@ const Projects: NextPage = () => {
             label: 'tigershop',
         },
         {
-            label: 'unix',
+            label: 'lucidia',
         },
 
     ]

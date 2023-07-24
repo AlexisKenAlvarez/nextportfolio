@@ -196,10 +196,10 @@ export const projectList = [
     },
     {
         num: '03',
-        title: 'Unix',
-        desc: 'Fully responsive e-commerce website with add to cart system similar to Shopee, made with MERN stack.',
-        img: 'Unix.webp',
-        link: '/projects/unix'
+        title: 'Lucidia',
+        desc: 'A website for my client. Converted figma to a pixel perfect web version using react.',
+        img: 'Lucidia.webp',
+        link: '/projects/lucidia'
     },
 
 ]
